@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.19)  16 OCT 2015 14:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.19)  16 OCT 2015 23:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**uebung1.tex
-(./uebung1.tex
+**UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.tex
+(./UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -390,35 +390,74 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ))
 \Gin@req@height=\dimen116
 \Gin@req@width=\dimen117
-) (./uebung1.aux)
+)
+(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2014/10/28 v3.00 enumerate extensions (DPC)
+\@enLab=\toks31
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count101
+\lst@gtempboxa=\box28
+\lst@token=\toks32
+\lst@length=\count102
+\lst@currlwidth=\dimen118
+\lst@column=\count103
+\lst@pos=\count104
+\lst@lostspace=\dimen119
+\lst@width=\dimen120
+\lst@newlines=\count105
+\lst@lineno=\count106
+\lst@maxwidth=\dimen121
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count107
+\lst@skipnumbers=\count108
+\lst@framebox=\box29
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+(UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.aux)
 \openout1 = `uebung1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen118
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen119
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count109
+\scratchdimen=\dimen122
+\scratchbox=\box30
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen123
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -467,34 +506,58 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+\c@lstlisting=\count115
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./uebung1.aux) ) 
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 30.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
+
+ []
+
+[2] (UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.aux) ) 
 Here is how much of TeX's memory you used:
- 3192 strings out of 493089
- 40376 string characters out of 6140694
- 105813 words of memory out of 5000000
- 6611 multiletter control sequences out of 15000+600000
- 8884 words of font info for 34 fonts, out of 8000000 for 9000
+ 5010 strings out of 493089
+ 64752 string characters out of 6140694
+ 181608 words of memory out of 5000000
+ 8393 multiletter control sequences out of 15000+600000
+ 13061 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,26p,257b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb>
-Output written on ./uebung1.pdf (1 page, 31727 bytes).
+ 38i,6n,49p,313b,1220s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/us
+r/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb
+8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebun
+g1.pdf (2 pages, 139757 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

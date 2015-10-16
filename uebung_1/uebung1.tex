@@ -3,9 +3,89 @@
 \usepackage[german,english]{babel}
 \usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
 \usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+  numbers=left,
+  language=C,
+  basicstyle=\footnotesize\ttfamily,
+  breaklines=true,
+  morekeywords={function}
+}
+\newcommand{\abs}[1]{\left| #1 \right| }
 \author{Felix Schrader, Jens Duffert, Eduard Sauter}
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 1}
 \begin{document}
 \maketitle
+
+\subsection*{Aufgabe 1.2}
+\begin{enumerate}[a)]
+  \item 
+    Das folgende Programm berechnet die Quadratwurzel einer positiven 
+    Zahl $x$ nach dem Divide-and-Conquer Paradigma. 
+
+
+    \begin{lstlisting}
+function SqrtBisect(x, eps){
+    return SqrtBisectRecurse(x, 0, x + 1, eps * eps);
+}
+
+function SqrtBisectRecurse(x, a, b, eps){
+    guess = (b+a)/2;
+    square = guess*guess;
+    if (abs(x - square) < eps)
+        return guess;
+    else if (square < x)
+        return SqrtBisectRecurse(x, guess, b, eps);
+    else
+        return SqrtBisectRecurse(x, a, guess,  eps);
+}
+  \end{lstlisting}
+
+  Um die Korrektheit zu zeigen, wird vorrausgesetzt ,dass  
+  \begin{equation}
+    a < b \iff a^2 < b^2 \quad\forall\, a, b \ge 0
+  \end{equation}
+  gilt.
+
+  \texttt{SqrtBisect} sucht $\sqrt{x}$ im Intervall $[0,x+1]$. Die Quadratwurzel
+  muss in diesem Bereich liegen, da $a * a > a \quad\forall\, a \ge 1 $ und
+  $a * a \le 1 \quad\forall\, 0 \le a \le 1$.
+  Zu beginn eines Funktionsaufrufes sei also sichergestellt, dass $\sqrt{x} \in
+  [a,b]$.  Aufgrund der oberen Gleichung und Zeilen 10-13 bleibt dies
+  Gew\"ahrleistet. Die Abbruchbedingung muss somit erreicht werden, da das
+  Suchintervall nach jedem Schritt halbiert wird. An dieser Stelle ist
+  % \texttt{guess}$^2$ im bereich $\varepsilon^2$ um $x$. \\
+  \begin{equation}
+  | x - \texttt{guess}^2 | < \varepsilon^2
+  \end{equation}
+  Es bleibt noch zu zeigen, dass daraus folgt $\left| \sqrt{x} - \texttt{guess}^2
+  < \varepsilon \right|$.
+
+  Dies folgt direkt aus \[ \left| x-a \right|^2 \le \left| x^2 - a^2 \right|  \]  
+  \emph{Beweis} \\
+  \begin{enumerate}
+    \item Fall $(x \ge a)$
+      \[ \abs{x-a}^2 = x^2 + a^2 - 2 ax \le x^2 + a^2 - 2 a^2 = x^2 -a^2 =
+      \abs{x^2-a^2}  \] 
+    \item Fall $(x < a)$
+      \[ \abs{x-a}^2 = x^2 + a^2 - 2 ax \le x^2 + a^2 - 2 x^2 = a^2 -x^2 =
+      \abs{x^2-a^2}  \] 
+  \end{enumerate}
+  Damit ist $\abs{ \texttt{SqrtBisect}(x)- \sqrt{x} } < \varepsilon$.
+
+
+
+  \item Im schlimmsten Fall erreicht $b-a$ den Wert von $\varepsilon^2$.
+    Dies geschieht, falls gleich zu begin $a=\sqrt{x}=0$. Da nach jedem Schritt
+    $b-a \to (b-a)/2$ ist nach dem $n$-ten Schritt f\"ur den Startwert
+    von $b-a=x+1$ der Wert $\frac{x+1}{2^n}$. Man erh\"alt als L\"osung:
+    \[ \frac{x+1}{2^n} = \varepsilon \implies n= \lg{\frac{x+1}{\varepsilon}} \] 
+
+
+\end{enumerate}
+
+
 
 \end{document}

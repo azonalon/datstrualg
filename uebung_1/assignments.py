@@ -21,6 +21,19 @@ def Factorial(n):
         return 1
     return n*Factorial(n-1)
 
+def SqrtBisect(x, tolerance):
+    return SqrtBisectRecurse(x, 0, x + 1, tolerance * tolerance)
+
+def SqrtBisectRecurse(x, a, b, tolerance):
+    guess = (b+a)/2
+    square = guess*guess
+    if abs(x - square) < tolerance:
+        return guess
+    elif square < x:
+        return SqrtBisectRecurse(x, guess, b, tolerance)
+    else:
+        return SqrtBisectRecurse(x, a, guess,  tolerance)
+
 
 print('Pascal Triangle:')
 for n in range(0,10):
@@ -31,3 +44,4 @@ for n in range(0,10):
 
 print(Factorial(5))
 print([Fibonacci(n) for n in range(0,10)])
+print(SqrtBisect(0.5, 0.001))
