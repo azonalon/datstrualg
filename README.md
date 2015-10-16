@@ -3,4 +3,4 @@ Willkommen
 
 in der wunderbaren Welt 
 
-$$ e=mc^2 $$
+$ e=mc^2 $
