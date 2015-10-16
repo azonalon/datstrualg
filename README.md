@@ -1,5 +1,4 @@
 # datstrualg
 ## Einleitung
 Willkommen
-in der wunderbaren Welt 
-$e=mc^2$
+in der wunderbaren Welt
