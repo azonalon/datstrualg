@@ -1,5 +1,4 @@
-# datstrualg
+# Datenstrukturen und Algorithmen WiSe 15/16
 ## Einleitung
 Willkommen
-in der wunderbaren Welt 
-$e=mc^2$
+in der wunderbaren Welt
