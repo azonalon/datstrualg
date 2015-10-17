@@ -1,8 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[german,english]{babel}
-\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
-\usepackage{graphicx}
+\usepackage[english, ngerman]{babel}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd}
 \usepackage{enumerate}
 \usepackage{listings}
 \usepackage{courier}
@@ -14,6 +13,8 @@
   morekeywords={function}
 }
 \newcommand{\abs}[1]{\left| #1 \right| }
+
+
 \author{Felix Schrader, Jens Duffert, Eduard Sauter}
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 1}
 \begin{document}
@@ -60,21 +61,20 @@ function SqrtBisectRecurse(x, a, b, eps){
   \begin{equation}
   | x - \texttt{guess}^2 | < \varepsilon^2
   \end{equation}
-  Es bleibt noch zu zeigen, dass daraus folgt $\left| \sqrt{x} - \texttt{guess}^2
+  Es bleibt noch zu zeigen, dass daraus folgt $\left| \sqrt{x} - \texttt{guess}
   < \varepsilon \right|$.
 
-  Dies folgt direkt aus \[ \left| x-a \right|^2 \le \left| x^2 - a^2 \right|  \]  
-  \emph{Beweis} \\
+  Dies ergibt sich aus \[ \left| x-a \right|^2 \le \left| x^2 - a^2 \right|  \]  
+  \emph{Beweis} 
   \begin{enumerate}
-    \item Fall $(x \ge a)$
+    \item Fall $x \ge a$
       \[ \abs{x-a}^2 = x^2 + a^2 - 2 ax \le x^2 + a^2 - 2 a^2 = x^2 -a^2 =
       \abs{x^2-a^2}  \] 
-    \item Fall $(x < a)$
+    \item Fall $x < a$
       \[ \abs{x-a}^2 = x^2 + a^2 - 2 ax \le x^2 + a^2 - 2 x^2 = a^2 -x^2 =
       \abs{x^2-a^2}  \] 
   \end{enumerate}
   Damit ist $\abs{ \texttt{SqrtBisect}(x)- \sqrt{x} } < \varepsilon$.
-
 
 
   \item Im schlimmsten Fall erreicht $b-a$ den Wert von $\varepsilon^2$.
