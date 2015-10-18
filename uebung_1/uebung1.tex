@@ -35,7 +35,12 @@ function bina(n, k) {
 }
 \end{lstlisting}
 
-\item Muss ich noch machen.
+\item Da die einzigen Startwerte immer eins sind und immer addiert werden um den Binomialkoeffizienten zu berechnen, dient das Ergebnis selber als Counter. Wenn das Programm den Koeffizienten berechnet, so sieht die Formel effektiv so aus:\[ 1+1+1+\dots =\binom{n}{k} \]
+Man kann leicht erkennen, das daf\"ur also
+\begin{equation}
+N_{Add}=\binom{n}{k}-1
+\end{equation}
+Additionen n\"otig sind.
 
 \item Das folgende Programm verwendet bei der Berechnung Memoisation:
 
