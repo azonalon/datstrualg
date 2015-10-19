@@ -20,6 +20,64 @@
 \begin{document}
 \maketitle
 
+\subsection*{Aufgabe 1.1}
+\begin{enumerate}[a)]
+
+\item Das folgende Programm berechnet den Binoialkoeffizienten rekursiv:
+
+\begin{lstlisting}
+// Funktion definieren:
+function bina(n, k) {
+	// Ergebnisse fuer k=0 und n=k eins setzen, weil bin(n,0)=bin(n,n)=1.
+	if(k == 0) return 1;
+	if(n == k) return 1;
+	// Ansonsten die Rekursionsformel benutzen:
+	return bina(n-1, k-1) + bina(n-1, k);
+}
+\end{lstlisting}
+
+\item Da die einzigen Startwerte immer eins sind und immer addiert werden um den Binomialkoeffizienten zu berechnen, dient das Ergebnis selber als Counter. Wenn das Programm den Koeffizienten berechnet, so sieht die Formel effektiv so aus:\[ 1+1+1+\dots =\binom{n}{k} \]
+Man kann leicht erkennen, das daf\"ur also
+\begin{equation}
+N_{Add}=\binom{n}{k}-1
+\end{equation}
+Additionen n\"otig sind.
+
+\item Das folgende Programm verwendet bei der Berechnung Memoisation:
+
+\begin{lstlisting}
+// Funktion definieren:
+function binc(n, k) {
+	// (n kreuz k)-Matrix erstellen (alle Elemente sind undefined). Darin sollen bekannte Ergebnisse gespeichert werden.
+	B = new Array(n);
+	for(i = 0; i <= n; i++) {
+		B[i] = new Array(k);
+	}
+	// Eintraege mit k=0 und n=k eins setzen:
+	for(nIndex = 0; nIndex <= n; nIndex++) {
+		for(kIndex = 0; kIndex <= k; kIndex++) {
+			if(kIndex == 0) B[nIndex][kIndex]=1;
+			if(nIndex == kIndex) B[nIndex][kIndex]=1;
+		}
+	}
+	// Funktion, die den Binomialkoeffizienten mit Memoisation berechnet, aufrufen:
+	return memobin(n, k, B)
+}
+
+// memobin definieren:
+function memobin(n, k, B) {
+	// Wenn B[n][k] schon bekannt ist (also typeof(B[n][k]) nicht mehr "undefined" ist, soll dieser Wert ausgegeben und die Funktion verlassen werden:
+	if(typeof(B[n][k]) == "number") return B[n][k];
+	// Ansonsten den Wert mit der Rekursionsformel bestimmen und als b speichern:
+	b = memobin(n-1, k-1, B) + memobin(n-1, k, B);
+	// Diesen Wert fuer evtl. spaetere Berechnungen in die Matrix eintragen und als Ergebnis ausgeben:
+	B[n][k] = b;
+	return b;
+}
+\end{lstlisting}
+
+\end{enumerate}
+
 \subsection*{Aufgabe 1.2}
 \begin{enumerate}[a)]
   \item
@@ -85,6 +143,9 @@ function SqrtBisectRecurse(x, a, b, eps){
 
 \end{enumerate}
 
+\subsection*{Aufgabe 1.3}
+Nimmt man z.B. die Liste $\lbrace 1, 19, 21, 22\rbrace$, so arbeitet die Coin-Changing-Methode mit dem Greedy-Algorithmus f\"ur die Zerlegung der Zahl 42 nicht optimal. W\"urde man diesen Algorithmus verwenden, w\"urde zun\"achst die 22 aus der Liste ausgew\"ahlt. Der Rest sind 20. Also w\"urde im n\"achsten Schritt die 19 ausgew\"ahlt. Der Rest 1 wird durch die 1 aufgef\"ullt. Man braucht also 3 Elemente der Liste.
 
+Optimal w\"are allerdings die Zerlegung $42 = 21 + 21$, da dort nur 2 Elemente ben\"otigt werden. Diese Zerlegung findet der Greedy-Algorithmus aber nicht.
 
 \end{document}
