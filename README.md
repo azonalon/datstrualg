@@ -1,4 +1,5 @@
 # Datenstrukturen und Algorithmen WiSe 15/16
 ## Einleitung
-Willkommen
-in der wunderbaren Welt
+
+Bitte benutzt leerzeichen anstatt tabs. Die einrückung sollte
+4 Leerzeichen betragen.
