@@ -7,4 +7,4 @@
  3. Functionsnamen groß geschrieben in CamelCase, keine Abkürzungen außer
  Eindeutige (z.b. getnr -> GetNumber) 
  4. 80 Charaktere pro zeile Maximal
- 5. Benutzt _kein_ if oder while, sonder _nur_ goto ... !
+ 5. Benutzt *kein* if oder while, sonder *nur* goto ... !
