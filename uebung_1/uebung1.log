@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.25)  19 OCT 2015 00:39
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.19)  16 OCT 2015 23:53
+>>>>>>> refs/remotes/azonalon/master
 entering extended mode
 **uebung1.tex
 (C:\Users\Felix\Documents\GitHub\datstrualg\uebung_1\uebung1.tex
@@ -250,6 +254,7 @@ Now handling font encoding U ...
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
+<<<<<<< HEAD
 *************************************
 * Local config file bblopts.cfg used
 *
@@ -258,12 +263,17 @@ File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\germanb.ldf"
 Language: germanb 2008/06/01 v2.6m German support from the babel system
+=======
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+>>>>>>> refs/remotes/azonalon/master
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
+<<<<<<< HEAD
 \l@austrian = a dialect from \language\l@german 
 Package babel Info: Making " an active character on input line 102.
 )
@@ -274,6 +284,22 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 \l@newzealand = a dialect from \language\l@british 
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+=======
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)
+(/usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2013/12/13 v2.7 German support for babel (new orthography)
+
+(/usr/share/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2013/12/13 v2.7 German support for babel (new orthography)
+\l@naustrian = a dialect from \language\l@ngerman 
+\l@nswissgerman = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 88.
+)))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+>>>>>>> refs/remotes/azonalon/master
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
@@ -366,6 +392,7 @@ Package: amscd 1999/11/29 v2.0
 \bigaw@=\dimen114
 \minCDarrowwidth=\dimen115
 )
+<<<<<<< HEAD
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -404,22 +431,34 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count101
+=======
+(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2014/10/28 v3.00 enumerate extensions (DPC)
+\@enLab=\toks30
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks31
+)
+\lst@mode=\count100
+>>>>>>> refs/remotes/azonalon/master
 \lst@gtempboxa=\box28
 \lst@token=\toks32
-\lst@length=\count102
-\lst@currlwidth=\dimen118
-\lst@column=\count103
-\lst@pos=\count104
-\lst@lostspace=\dimen119
-\lst@width=\dimen120
-\lst@newlines=\count105
-\lst@lineno=\count106
-\lst@maxwidth=\dimen121
+\lst@length=\count101
+\lst@currlwidth=\dimen116
+\lst@column=\count102
+\lst@pos=\count103
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count104
+\lst@lineno=\count105
+\lst@maxwidth=\dimen119
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count107
-\lst@skipnumbers=\count108
+\c@lstnumber=\count106
+\lst@skipnumbers=\count107
 \lst@framebox=\box29
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -436,6 +475,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
+<<<<<<< HEAD
 (C:\Users\Felix\Documents\GitHub\datstrualg\uebung_1\uebung1.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
@@ -467,14 +507,39 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@lstlisting=\count115
 LaTeX Font Info:    Try loading font information for U+msa on input line 20.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+=======
+(UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.aux)
+\openout1 = `uebung1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+\c@lstlisting=\count108
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+>>>>>>> refs/remotes/azonalon/master
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 27.
+=======
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 30.
+>>>>>>> refs/remotes/azonalon/master
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -482,6 +547,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <9> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
+<<<<<<< HEAD
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 29.
  [1
 
@@ -517,6 +583,36 @@ w/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier
 /ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.
 pfb>
 Output written on uebung1.pdf (4 pages, 171491 bytes).
+=======
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 31.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+(UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebung1.aux) ) 
+Here is how much of TeX's memory you used:
+ 3773 strings out of 493089
+ 46691 string characters out of 6140694
+ 169324 words of memory out of 5000000
+ 7215 multiletter control sequences out of 15000+600000
+ 13061 words of font info for 50 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 27i,6n,49p,281b,1220s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/sh
+are/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrb8a.p
+fb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on UNI/datenstrukturen_und_algorithmen/datstrualg/uebung_1/uebun
+g1.pdf (2 pages, 140187 bytes).
+>>>>>>> refs/remotes/azonalon/master
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
