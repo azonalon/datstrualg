@@ -1,6 +1,6 @@
 # Datenstrukturen und Algorithmen WiSe 15/16
-# Wichtig
-## Falls ihr das ausdrucken wollt, bitte kompiliert die pdf noch einmal selbst,
+## Wichtig
+## Falls ihr das ausdrucken wollt, bitte erzeugt die pdf noch einmal selbst!
 ich garantiere nicht dafür das die pdfs immer auf stand der tex file sind.
 ## Einleitung
 
