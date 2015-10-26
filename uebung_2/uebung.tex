@@ -15,10 +15,75 @@
 \newcommand{\abs}[1]{\left| #1 \right| }
 
 
-\author{Felix Schrader (3053850) , Jens Duffert (2843110) , Eduard Sauter (3053470)}
+\author{
+  Felix Schrader, 3053850 \\ 
+  Jens Duffert, 2843110 \\
+  Eduard Sauter, 3053470
+}
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 2}
 \begin{document}
 \maketitle
 
+\subsection*{Aufgabe 3}
+%
+Es sei $f(n)$ die Laufzeitfunktion des jeweiligen Algortihmus.
+  \subsubsection*{\texttt{Linear-Search}}
+    \begin{description}
+      \item[Best-Case] Das gesuchte Element ist an erster Position. Die Laufzeit
+        ist folglich $\Theta(1)$, da nur ein Element gepr\"uft wird.
+
+      \item[Worst-Case] Das gesuchte Element ist an letzter Position. Es werden
+        also $n$ Elemente \"uberpr\"uft. Dies bedeutet $\Theta(n)$.
+        
+      \item[Average-Case] 
+        F\"ur einen beliebigen Index $i$ ist die Wahrscheinlichkeit, den 
+        Wert $x$ an dieser Stelle zu finden nach Vorraussetzung $\frac{1}{n}$.
+        Es sei $j$ der Index von $x$.  Also $P(j=i) = \frac{1}{n}$. 
+        Damit ist der Erwartungswert 
+        %
+        \begin{align*}
+          E(j)  = \sum_{i=0}^{n-1} (i + 1) P(j=i) = \frac{1}{n} \sum_{i=1}^{n} i 
+                                                  = \frac{n + 1}{2} \\
+        \end{align*}
+        %
+        Also ist die Laufzeitfunktion von \texttt{Linear-Search} in 
+        $\Theta(n)$.
+
+    \end{description}
+  \subsubsection*{\texttt{Randomized-Search}}
+    \begin{description}
+      \item[Best-Case] Der erste Index ist nach dem ersten Versuch derjenige von
+        $x$. Also ist in diesem fall wieder $f(n) \in \Theta(1)$. 
+
+      \item[Worst-Case] Der Wert wird nie gefunden, weil zum Beispiel der
+        Zuf\"allsgenerator in jedem Iterationsschritt 1 ausgibt und 
+        $x$ nicht den ersten Index belegt.
+
+      \item[Average-Case] 
+        Es sei $q$ die Anzahl der ben\"otigten Schritte um $x$ zu finden. 
+        In jedem Schritt ist die Wahrscheinlichkeit $x$ zu finden nach Vorraussetzung
+        wieder $\frac{1}{n}$. F\"ur $P(q=i)$ muss noch die Wahrscheinlichkeit
+        ber\"ucksichtigt werden, dass die Iteration nicht abgebrochen ist, weil $x$
+        bereits gefunden wurde. Diese ist nach $i$ Schritten 
+        $\left( 1 - \frac{1}{n} \right)^i$. 
+        Da die ersten $i-1$ Zufallsexperimente unabh\"angig von den $i$-ten
+        Versuch sind, ist 
+        %
+        \begin{align*}
+          P(q=i)= \frac{1}{n} \left( 1 - \frac{1}{n} \right)^( i - 1 )
+        \end{align*}
+        %
+        Damit ergibt sich der Erwartungswert zu
+        %
+        \begin{align*}
+          E(q) & = \sum_{i=1}^{\infty} i P(q=i)  \\
+               & = \left( 1 - \frac{1}{n} \right)^{-1} 
+          \sum_{i=1}^{\infty} \frac{i}{n} \left( 1- \frac{1}{n} \right)^i  \\
+          & = \frac{1}{ 1-\frac{1}{n} } 
+          \frac{1-\frac{1}{n} }{\left( \frac{1}{n} \right)^2} = n^2 
+        \end{align*}
+        %
+        Damit ist $f(n) \in \Theta(n^2)$
+    \end{description}
 
 \end{document}
