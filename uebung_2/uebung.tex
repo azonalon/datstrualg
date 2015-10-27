@@ -26,7 +26,75 @@
 
 \subsection*{Aufgabe 1}
 
-Hier kommt Aufgabe 1 hin!
+\begin{enumerate}[(a)]
+  \item Es gilt:
+    \begin{align*}
+      2^{n+d} = 2^d \cdot 2^n
+    \end{align*}
+    Wählt man $c = 42 \cdot 2^d$ und $n_0 = 1$, so ist
+    \begin{align*}
+      f(n)=2^d \cdot 2^n \leq c \cdot g(n) = 42 \cdot 2^d \cdot 2^n
+    \end{align*}
+    für alle $n \geq n_0$, da man auf beiden Seiten durch $2^d \cdot 2^n$ teilen
+    kann und die wahre Aussage $1 \leq 42$ erhält.
+  \item Es gilt:
+    \begin{align*}
+      \log_a (n) = \frac{1}{\log_b (a)} \cdot \log_b (n)
+    \end{align*}
+    In der Stundenübung 2.1 haben wir gezeigt:
+    \begin{align*}
+      \mathcal{O}(f(n)) = \mathcal{O}(c \cdot f(n)), \quad c > 0
+    \end{align*}
+    Wählt man also $f(n) = \log_a (n)$ und $c = 1/\log_b (a) > 0$, so
+    erhält man:
+    \begin{align*}
+      \mathcal{O}(\log_a (n)) = \mathcal{O}(\log_b (n))
+    \end{align*}
+  \item In der Vorlesung wurde als Rechenregel für Landau-Symbole eingeführt:
+    \begin{align*}
+      \Theta (f(n)) + \Theta (g(n)) = \Theta (f(n)+g(n))
+    \end{align*}
+    Indem man diese Regel iterativ anwendet, erhält man für die Summe:
+    \begin{align*}
+      \sum_{i=1}^n \Theta (i) &= \Theta \left(\sum_{i=1}^n i\right)
+      \\ &= \Theta \left(\frac{n(n+1)}{2}\right)
+      \\ &= \Theta \left(\frac{n^2}{2} + \frac{n}{2}\right)
+    \end{align*}
+    Wählt man $c = 1$ und $n_0 = 1$, so erkennt man:
+    \begin{align*}
+      &\frac{n^2}{2} + \frac{n}{2} \in \mathcal{O}(n^2),\quad\text{da}
+      \\ &\frac{n^2}{2} + \frac{n}{2} \leq n^2 \quad\forall n \geq n_0
+    \end{align*}
+    Mit $c = 1/2$ und $n_0 = 1$ sieht man außerdem:
+    \begin{align*}
+      &\frac{n^2}{2} + \frac{n}{2} \in \Omega (n^2),\quad\text{da}
+      \\ &\frac{n^2}{2} + \frac{n}{2} \geq\frac{n^2}{2}\quad\forall n\geq n_0
+      \\ &\Leftrightarrow \frac{n}{2} \geq 0 \quad\forall n \geq n_0
+    \end{align*}
+    Also ist insgesamt:
+    \begin{align*}
+      \sum_{i=1}^n \Theta (i) &= \Theta \left(\frac{n^2}{2}+\frac{n}{2}\right)
+      \\ &= \Theta (n^2)
+    \end{align*}
+  \item Es gilt:
+    \begin{align*}
+      \sum_{r=0}^{n-1} \sum_{s=r}^{n-1} \sum_{i=r}^{s} 1 &= \sum_{r=0}^{n-1}
+        \sum_{s=r}^{n-1} (s-r+1)
+      \\ &= \sum_{r=0}^{n-1} \sum_{s=0}^{n-r-1} (1+s)
+      \\ &= \sum_{r=0}^{n-1} (n-r) + \frac{(n-r-1)(n-r)}{2}
+      \\ &= \sum_{r=0}^{n-1} \left(\frac{n^2+n}{2}-\frac{2n+1}{2}r+
+        \frac{r^2}{2}\right)
+      \\ &= \frac{n(n^2+n)}{2}-\frac{n(n-1)(2n+1)}{4}+\frac{n(n-1)(2n-1)}{12}
+      \\ &= \frac{n^3}{6} + \frac{n^2}{2} + \frac{n}{3}
+    \end{align*}
+     Wählt man $c = 1/6$ und $n_0 = 1$, so erkennt man:
+     \begin{align*}
+       &\sum_{r=0}^{n-1} \sum_{s=r}^{n-1} \sum_{i=r}^{s} 1 \in \Omega (n^3)
+       \\ &\Leftrightarrow \frac{n^3}{6} + \frac{n^2}{2} + \frac{n}{3} \geq
+         \frac{n^3}{6} \quad\forall n \geq n_0
+       \\&\Leftrightarrow\frac{n^2}{2}+\frac{n}{3}\geq 0\quad\forall n\geq n_0
+     \end{align*}
+\end{enumerate}
 
 \subsection*{Aufgabe 3}
 %
