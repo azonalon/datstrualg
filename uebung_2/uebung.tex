@@ -24,7 +24,6 @@
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 2}
 \begin{document}
 \maketitle
-
 \subsection*{Aufgabe 1}
 
 \begin{enumerate}[a)]
@@ -96,7 +95,6 @@
        \\&\Leftrightarrow\frac{n^2}{2}+\frac{n}{3}\geq 0\quad\forall n\geq n_0
      \end{align*}
 \end{enumerate}
-
 \subsection*{Aufgabe 2}
 %
 
@@ -116,10 +114,10 @@ Es wird nun der Limes betrachtet.
 \lim\limits_{n \rightarrow \infty}{e^{n}} = 
   \lim\limits_{n \rightarrow \infty}{n^c} = \infty
 \end{align*}
-Da beide Grenzwert $\infty$ betragen, wird L`Hospital verwendet.
+Da beide Grenzwerte $\infty$ betragen, wird L`Hospital verwendet.
 \begin{align*}
 \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{n^{c}}} &= \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot n^{c - 1}}} = \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot (c-1) \cdot n^{c - 2}}} = \ldots \\
-& =\lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot (c-1) \ldots \cdot n^{c - c}}} = \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c!}}
+& =\lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot (c-1)\cdot \ldots \cdot n^{c - c}}} = \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c!}}
 \end{align*}
 Da der Limes $\infty$ ist, folgt daraus das die Funktion $e^{n} \notin \mathcal{O}(n^c)$ ist (nach der oben genannten Definition.)
 \item  Die Funktion die gegeben ist sieht wie folgt aus:
@@ -135,13 +133,12 @@ Nun wird L'Hospital angewendet.
 \begin{align*}
 \lim\limits_{n \rightarrow \infty}{\dfrac{\text{log}(n)}{n}} = \lim\limits_{n \rightarrow \infty}{\dfrac{\dfrac{1}{n}}{1}} = \lim\limits_{n \rightarrow \infty}{\dfrac{1}{n}}
 \end{align*}
-Es wird der Limes nun berechnet:
+Es wird nun der Limes berechnet:
 \begin{align*}
 \lim\limits_{n \rightarrow \infty}{\dfrac{1}{n}} = 0
 \end{align*}
 
 Da der Limes 0 ist folgt daraus, dass die Funktion $\text{log}(n) \notin \Omega(n)$ ist (nach der oben genannten Definition).
->>>>>>> f4ba21950a6a7eabffdea668fcebdc47c5d9677f
 
 \end{enumerate}
 \subsection*{Aufgabe 3}
