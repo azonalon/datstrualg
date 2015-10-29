@@ -14,7 +14,7 @@
   morekeywords={function}
 }
 \newcommand{\abs}[1]{\left| #1 \right| }
-
+\setlength{\parindent}{0pt} 
 
 \author{
   Felix Schrader, 3053850 \\ 
@@ -97,6 +97,50 @@
      \end{align*}
 \end{enumerate}
 
+\subsection*{Aufgabe 2}
+%
+
+Gegeben ist:\\
+\begin{align*}
+f(n) \in  \mathcal{O}(g(n)) &\Leftrightarrow \lim\limits_{n \rightarrow \infty}{\text{sup}\, \dfrac{f(n)}{g(n)} < \infty}\\[0.5cm]
+f(n) \in  \Omega(g(n)) &\Leftrightarrow \lim\limits_{n \rightarrow \infty}{\text{inf}\, \dfrac{f(n)}{g(n)} >\, 0}
+\end{align*}
+\begin{enumerate}[a)]
+%
+\item Die Funktion die gegeben ist sieht wie folgt aus:
+\begin{align*}
+e ^{n} \notin \mathcal{O}(n^{c})  \quad \forall c \in \mathrm{N}
+\end{align*}
+Es wird nun der Limes betrachtet.
+\begin{align*}
+\lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{n^{c}}} \Rightarrow \infty
+\end{align*}
+Da der Grenzwert $\infty$ beträgt, wird L`Hospital verwendet.
+\begin{align*}
+\lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{n^{c}}} &= \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot n^{c - 1}}} = \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot (c-1) \cdot n^{c - 2}}} = \ldots \\
+& =\lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c \cdot (c-1) \ldots \cdot n^{c - c}}} = \lim\limits_{n \rightarrow \infty}{\dfrac{e^{n}}{c!}}
+\end{align*}
+Da der Limes $\infty$ ist, folgt daraus das die Funktion $e^{n} \notin \mathcal{O}$ ist (nach der oben genannten Definition.)
+\item  Die Funktion die gegeben ist sieht wie folgt aus:
+\begin{align*}
+\text{log}(n) \notin \Omega(n)
+\end{align*}
+Wie im Hinweis geschrieben, wird der normale Limes betrachtet. 
+\begin{align*}
+\lim\limits_{n \rightarrow \infty}{\dfrac{\text{log}(n)}{n}} \Rightarrow \infty
+\end{align*}
+Nun wird L'Hospital angewendet.
+\begin{align*}
+\lim\limits_{n \rightarrow \infty}{\dfrac{\text{log}(n)}{n}} = \lim\limits_{n \rightarrow \infty}{\dfrac{\dfrac{1}{n}}{1}} = \lim\limits_{n \rightarrow \infty}{\dfrac{1}{n}}
+\end{align*}
+Es wird der Limes nun berechnet:
+\begin{align*}
+\lim\limits_{n \rightarrow \infty}{\dfrac{1}{n}} = 0
+\end{align*}
+
+Da der Limes 0 ist folgt daraus, dass die Funktion $\text{log}(n) \notin \Omega(n)$ ist (nach der oben genannten Definition).
+
+\end{enumerate}
 \subsection*{Aufgabe 3}
 %
 Es sei $f(n)$ die Laufzeitfunktion des jeweiligen Algorithmus.
@@ -143,7 +187,7 @@ Es sei $f(n)$ die Laufzeitfunktion des jeweiligen Algorithmus.
         Versuch sind, ist 
         %
         \begin{align*}
-          P(q=i)= \frac{1}{n} \left( 1 - \frac{1}{n} \right)^( i - 1 )
+          P(q=i)= \frac{1}{n} \left( 1 - \frac{1}{n} \right)^{ i - 1 }
         \end{align*}
         %
         Damit ergibt sich der Erwartungswert zu
