@@ -1,4 +1,5 @@
 #!/bin/python
+import math
 
 def Binomial(n, k):
     if k == 0 or n == k:
@@ -41,17 +42,18 @@ def SqrtBisectRecurse(x, a, b, tolerance):
         return SqrtBisectRecurse(x, a, guess,  tolerance)
 
 
-print('Pascal Triangle:')
-for n in range(0, 40):
-    line = ''
-    for j in range(0, n + 1):
-        num = Binomial(n,j)
-        line += ('U') if num % 2 != 0 else ' '
-    print(line.center(80))
+# print('Pascal Triangle:')
+# for n in range(0, 40):
+#     line = ''
+#     for j in range(0, n + 1):
+#         num = Binomial(n,j)
+#         line += ('U') if num % 2 != 0 else ' '
+#     print(line.center(80))
 
-print(Factorial(5))
+# print(Factorial(5))
+# print(Binomial(5, 4))
+# print([Fibonacci(n) for n in range(0, 10)])
 
-print(Binomial(5, 4))
+print([math.sqrt(x/5) for x in range(0,10)])
+print([SqrtBisect(x/5, 0.001) for x in range(0,10)])
 
-print([Fibonacci(n) for n in range(0, 10)])
-print(SqrtBisect(0.5, 0.001))
