@@ -11,7 +11,7 @@
   language=C,
   basicstyle=\footnotesize\ttfamily,
   breaklines=true,
-  morekeywords={function}
+  morekeywords={function, NIL}
 }
 \newcommand{\abs}[1]{\left| #1 \right| }
 \setlength{\parindent}{0pt} 
@@ -21,7 +21,32 @@
   Jens Duffert, 2843110 \\
   Eduard Sauter, 3053470
 }
-\title{Datenstrukturen und Algorithmen: Haus\"ubung 2}
+\title{Datenstrukturen und Algorithmen: Haus\"ubung 3}
 \begin{document}
 \maketitle
+\subsection*{Aufgabe 2}
+\begin{enumerate}[a)]
+  \item  
+\begin{center}
+\begin{lstlisting}
+function insertList(L1, L2, pos) {
+  L1_position = L1.first();
+  L2_position = pos
+
+  while(L1_position != NIL) {
+    L2.insert(L2_position, L1.retrieve(L1_position))
+    L2_position = L2_position.next()
+    L1_position = L1_position.next()
+  }
+}
+\end{lstlisting}
+\end{center}
+    
+  \item Laufzeit
+    
+    
+\end{enumerate}
+
+
+
 \end{document}
