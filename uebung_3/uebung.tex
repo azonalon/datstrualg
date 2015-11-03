@@ -30,19 +30,65 @@
 \begin{center}
 \begin{lstlisting}
 function insertList(L1, L2, pos) {
-  L1_position = L1.first();
-  L2_position = pos
+  L1_position = pos;
+  L2_position = L2.first();
 
-  while(L1_position != NIL) {
-    L2.insert(L2_position, L1.retrieve(L1_position))
-    L2_position = L2_position.next()
-    L1_position = L1_position.next()
+  while(L2_position != NIL) {
+    L1.insert(L1_position, L2.retrieve(L2_position));
+    L1_position = L1_position.next();
+    L2_position = L2_position.next();
   }
 }
 \end{lstlisting}
 \end{center}
     
   \item Laufzeit
+    \begin{itemize}
+      \item
+        Nach Vorlesung sind die Operationen \texttt{insert}, \texttt{next}, 
+        \texttt{retrieve} und \texttt{first} implementiert durch die verkettete
+        Liste in $\mathcal{O}(1)$. Es sei $n=\texttt{L2.length()}$. 
+        Die Schleife beginnend bei Zeile 5 wird $n$ mal durchlaufen. Jede der 
+        Operationen im Schleifenkopf sowie der Vergleich zu beginn der Schleife
+        sind in $\mathcal{O}(1)$. Folglich ist die Laufzeit von \texttt{insertList}
+        in $\mathcal{O}(n)$.
+      \item W\"urde man \texttt{L2} vor \texttt{pos} einf\"ugen wollen, so
+        m\"usste man vorher die Position vor \texttt{pos} finden.
+\begin{lstlisting}
+function previous(L, pos) {
+    last_pos = NIL;
+    current_pos = L.first();
+    while(current_pos != pos && current_pos != NIL) {
+        last_pos = current_pos;
+        current_pos = pos.next();
+    }
+    return last_pos
+}
+\end{lstlisting}
+        Es sei $m=\texttt{L1.Length}$ 
+        Die Worst-Case Laufzeit von Previous ist in $\mathcal{O}(m)$,
+        da in diesem Fall $m$ Elemente \"uberpr\"uft werden m\"ussen. 
+
+\begin{lstlisting}
+  function insertListPrevious(L1, L2, pos) {
+      L1_position = previous(L1, pos);
+      L2_position = L2.first();
+  
+      while(L2_position != NIL) {
+          L1.insert(L1_position, L2.retrieve(L2_position));
+          L1_position = L1_position.next();
+          L2_position = L2_position.next();
+      }
+  }
+\end{lstlisting}
+        
+        Analog zu \texttt{insertList} ergibt sich die Worst-Case Laufzeit von
+        \texttt{InsertListPrevious} zu $\mathcal{O}(m + n)$.
+
+    \end{itemize}
+    
+
+
     
     
 \end{enumerate}
