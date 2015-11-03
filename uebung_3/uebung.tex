@@ -24,6 +24,49 @@
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 3}
 \begin{document}
 \maketitle
+\subsection*{Aufgabe 1}
+\begin{enumerate}[a)]
+\item
+  Der folgende Algorithmus legt zunächst ein neues Array
+  \texttt{permuted$\_$data} an, das mit dem Ergebnis der Permutation gefüllt
+  werden soll. Dazu wird mit einer \texttt{for}-Schleife das ganze Array
+  durchgegangen. Die Stelle \texttt{index} in \texttt{permuted$\_$data} wird
+  dann mit \texttt{data$\lbrack$permutation$\lbrack$index$\rbrack\rbrack$}
+  gefüllt, da dies der Wert ist, der nach dem permutieren an der Stelle
+  \texttt{index} stehen soll.
+  \begin{lstlisting}
+    function permute(data, permutation) {
+        permuted_data = new Array(n);
+        for(index = 0, index < n, index++) {
+            permuted_data[index] = data[permutation[index]];
+        }
+        return permuted_data;
+    }
+  \end{lstlisting}
+  In dem Algorithmus gibt es zunächst eine Zuweisung in der Zeile:
+  \begin{lstlisting}
+    permuted_data = new Array(n);
+  \end{lstlisting}
+  Dann wird eine \texttt{for}-Schleife durchlaufen:
+  \begin{lstlisting}
+    for(index = 0, index < n, index++) {
+        permuted_data[index] = data[permutation[index]];
+    }
+  \end{lstlisting}
+  Der Schleifenkopf weist dann mit der Initialisierung einmal einen Wert zu,
+  vergleicht dann $n$-mal, ob \texttt{index} kleiner als $n$ ist und erhöht
+  \texttt{index} dann $n$-mal, was je einer Addition und einer Zuweisung
+  entspricht. Dann wird der entsprechenden Stelle in \texttt{permuted$\_$data}
+  ein Wert zugewiesen. Auch das passiert $n$-mal. Insgesamt erhält man also
+  eine Laufzeit:
+  \begin{align*}
+    f (n) &= 1 + n + n + 2 \cdot n + n
+    \\ &= 5 \cdot n + 1 \in \Theta (n)
+  \end{align*}
+  Allerdings benötigt man auch linear viel Speicher, da man ein neues Array der
+  Länge $n$ erstellt.
+\item 
+\end{enumerate}
 \subsection*{Aufgabe 2}
 \begin{enumerate}[a)]
   \item  $ $
