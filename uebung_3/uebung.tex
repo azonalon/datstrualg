@@ -65,7 +65,46 @@
   \end{align*}
   Allerdings benötigt man auch linear viel Speicher, da man ein neues Array der
   Länge $n$ erstellt.
-\item 
+\item
+  Der folgende Algorithmus berechnet die Permutation mit konstantem Speicher
+  (allerdings wird dort \texttt{permutation} verändert):
+  \begin{lstlisting}
+    function permute(data, permutation) {
+        for(cycle_start = 0; cycle_start < n; cycle_start++) {
+            if(permutation[cycle_start] != -1) {
+                temp = data[cycle_start];
+                for(index = cycle_start; data[index] != data[permutation[index]]; index = next_index) {
+                    if(permutation[index] == cycle_start) {
+                        data[index] = temp;
+                    } else {
+                        data[index] = data[permutation[index]];
+                        next_index = permutation[index];
+                        permutation[index] = -1;
+                    }
+                }
+            }
+        }
+        return data;
+    }
+  \end{lstlisting}
+  Zunächst startet man mit der ersten Position von \texttt{data}. Der Wert an
+  dieser Stelle wird in \texttt{temp} gespeichert. Dann wird der Wert von
+  \texttt{data} an dieser Stelle durch den von der Permutation angegebenen
+  ersetzt. Der Algorithmus wechselt nun zu der Position, von der gerade der
+  Wert an die richtige Stelle kopiert wurde und wiederholt dies dort. Dabei
+  werden die Stellen in \texttt{permutation}, an denen man schon war mit $-1$
+  markiert. Wenn wieder eine Referenz auf die erste Position auftaucht, wird
+  der zwischengespeicherte Wert \texttt{temp} eingesetzt. Der Zykel ist dann
+  abgeschlossen und es wird an der nächsten Stelle weitergemacht. Dort wird das
+  Verfahren unter der Bedingung, dass \texttt{permutation} an dieser Stelle
+  nicht $-1$ stehen hat (diese Position also nicht Teil eines schon behandelten
+  Zykels ist) wiederholt. Wenn das Ende von \texttt{data} erreicht ist wird als
+  Ergebnis \texttt{data} wieder ausgegeben.
+  
+  Der Speicher ist konstant, da man die 4 neuen Variablen
+  \texttt{cycle$\_$start}, \texttt{temp}, \texttt{index} und
+  \texttt{next$\_$index} verwendet. \texttt{permutation} haben wir dabei
+  geändert, damit keine Zykel mehrfach permutiert werden.
 \end{enumerate}
 \subsection*{Aufgabe 2}
 \begin{enumerate}[a)]
