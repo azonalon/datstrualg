@@ -99,9 +99,7 @@ function insertList(L1, L2, pos) {
         m\"usste man vorher die Position vor \texttt{pos} finden.
 \begin{lstlisting}
 function previous(L, pos) {
-    last_pos = NIL;
-    current_pos = L.first();
-    while(current_pos != pos && current_pos != NIL) {
+    last_pos = NIL; current_pos = L.first(); while(current_pos != pos && current_pos != NIL) {
         last_pos = current_pos;
         current_pos = pos.next();
     }
@@ -134,22 +132,35 @@ function previous(L, pos) {
 \subsection*{Aufgabe 3}
 \begin{enumerate}[a)]
 	\item 
-	In dieser Aufgabe soll beschrieben werden, welche Klasse und Methode für die Implementierung des ADT Liste als Vektor in C++ gebraucht wird.\\
-	Die Klasse in C++ die benötigt wird ist vector bzw. std::vector (Quelle: www.c-plusplus.net/forum/140930-fall). Die Methoden sehen wie folgt aus (Quelle: http://en.cppreference.com/w/cpp/container/vector). Dabei habe ich meinen C++ Vektor die Länge n und das erste Element hat den Indize 0.
-	\begin{align}
-	\text{L.first}() &= (\text{std::vektor}) \text{return 0}\quad \mathcal{O}(1)\\
-	\text{L.last}() &= (\text{std::vektor}) \text{return v.size-1}\quad \mathcal{O}(1)\\
-	\text{L.length}() &= (\text{std::vektor}) \text{size ()}\quad \mathcal{O}(1)\\
-	\text{L.retrieve}() &= (\text{std::vektor}) \text{at ()}\quad \mathcal{O}(1)\\
-	\text{L.delete}() &= (\text{std::vektor}) \text{erase ()}\quad \mathcal{O}(n)\\
-	\text{L.insert}() &= (\text{std::vektor}) \text{insert ()}\quad \mathcal{O}(1)
-	\end{align}
+  In dieser Aufgabe soll beschrieben werden, welche Klasse und Methode für die
+  Implementierung des ADT Liste als Vektor in C++ gebraucht wird.\\ Die Klasse
+  in C++ die benötigt wird ist vector bzw. std::vector (Quelle:
+  www.c-plusplus.net/forum/140930-fall). Die Methoden sehen wie folgt aus
+  (Quelle: http://en.cppreference.com/w/cpp/container/vector). Dabei habe ich
+  meinen C++ Vektor die Länge n und das erste Element hat den Indize 0.
+
+  \begin{align}
+    \text{L.first}() &= (\text{std::vektor}) \text{return 0}\quad \mathcal{O}(1)\\
+    \text{L.last}() &= (\text{std::vektor}) \text{return v.size-1}\quad \mathcal{O}(1)\\
+    \text{L.length}() &= (\text{std::vektor}) \text{size ()}\quad \mathcal{O}(1)\\
+    \text{L.retrieve}() &= (\text{std::vektor}) \text{at ()}\quad \mathcal{O}(1)\\
+    \text{L.delete}() &= (\text{std::vektor}) \text{erase ()}\quad \mathcal{O}(n)\\
+    \text{L.insert}() &= (\text{std::vektor}) \text{insert ()}\quad \mathcal{O}(1)
+  \end{align}
 	
-	\item[b)]
-	Die Klasse std::deque ist sozusagen ein Vektor, wo Änderungen am ersten und am letzten Element möglich sind. Hierfür gibt es unterschiedliche Befehle. $Push\_front$ ermöglicht es, ein Element am Anfang hinzuzufügen und $Push\_back$ hingegen am Ende.\\
-	Die Klasse std::stack zeichnet sich daraus aus, das immer nur das oberste Elemente verändert werden kann (entfernen, hinzufügen usw.). Dies ist auch in std::deque möglich. Dies Voraussetzung hierzu ist die Beschränkung, das nur die Befehle für das obere Element verwendet werden. Dadurch ist es möglich std::stack durch std::deque zu implementieren.
-	
-	\item[c)]
+	\item
+
+  Die Klasse std::deque ist sozusagen ein Vektor, wo Änderungen am ersten und
+  am letzten Element möglich sind. Hierfür gibt es unterschiedliche Befehle.
+  $Push\_front$ ermöglicht es, ein Element am Anfang hinzuzufügen und
+  $Push\_back$ hingegen am Ende.\\ Die Klasse std::stack zeichnet sich daraus
+  aus, das immer nur das oberste Elemente verändert werden kann (entfernen,
+  hinzufügen usw.). Dies ist auch in std::deque möglich. Dies Voraussetzung
+  hierzu ist die Beschränkung, das nur die Befehle für das obere Element
+  verwendet werden. Dadurch ist es möglich std::stack durch std::deque zu
+  implementieren.
+
+	\item
 	
 	
 \end{enumerate}
