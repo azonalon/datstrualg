@@ -142,7 +142,7 @@ function previous(L, pos) {
         \texttt{L.length}    & $\leftrightarrow$ & \texttt{v.size  }   &   $\mathcal{O}(1)$\\
         \texttt{L.retrieve}  & $\leftrightarrow$ & \texttt{v.at    }   &   $\mathcal{O}(1)$\\
         \texttt{L.delete}    & $\leftrightarrow$ & \texttt{v.erase }  &   $\mathcal{O}(n)$\\
-        \texttt{L.insert}    & $\leftrightarrow$ & \texttt{v.insert} &   $\mathcal{O}(1)$
+        \texttt{L.insert(p)}    & $\leftrightarrow$ & \texttt{v.insert(p+1, x)} &   $\mathcal{O}(n)$
       \end{tabular}
     \end{centering}
 
