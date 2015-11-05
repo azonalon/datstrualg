@@ -150,17 +150,27 @@ function previous(L, pos) {
 	
 	\item
 
-  Die Klasse std::deque ist sozusagen ein Vektor, wo Änderungen am ersten und
-  am letzten Element möglich sind. Hierfür gibt es unterschiedliche Befehle.
-  $Push\_front$ ermöglicht es, ein Element am Anfang hinzuzufügen und
-  $Push\_back$ hingegen am Ende.\\ Die Klasse std::stack zeichnet sich daraus
+  Die \texttt{std::deque} ist prinzipiell ein Listen\"ahnlicher Typ,
+  welcher es erm\"oglicht, schnell Elemente am beginn und am 
+  Ende einzuf\"ugen.  Die Klasse std::stack zeichnet sich daraus
   aus, das immer nur das oberste Elemente verändert werden kann (entfernen,
   hinzufügen usw.). Dies ist auch in std::deque möglich. Dies Voraussetzung
   hierzu ist die Beschränkung, das nur die Befehle für das obere Element
   verwendet werden. Dadurch ist es möglich std::stack durch std::deque zu
-  implementieren.
+  implementieren. 
 
 	\item
+     \texttt{std::deque} ist meist durch eine Doppelt-Verlinkte Liste
+     implementiert. Einf\"ugen von Elementen l\"auft deswegen immer
+     in $\mathcal{O}(1)$. Siehe auch die entsprechende
+     implementierung der ADT Liste. \texttt{std::vector} muss
+     schnellen zuf\"alligen Zugriff auf die Elemente garantieren. Hierzu
+     arbeitet im Hintergrund meist ein Array. Einf\"ugen von Elementen
+     in ein Array kostet im Schlimmsten Fall $\mathcal{O(n)}$ Zeit.
+     Falls der Vektor ausreichend speicher vorallokiert hat, so
+     ist er in der Lage, Elemente schnell am Ende einzuf\"ugen. So 
+     kann eine amortisierte Laufzeit von $\mathcal{O}(1)$ erm\"oglicht werden.
+
 	
 \end{enumerate}
 
