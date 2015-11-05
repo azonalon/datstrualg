@@ -131,47 +131,51 @@ function previous(L, pos) {
 \newpage
 \subsection*{Aufgabe 3}
 \begin{enumerate}[a)]
-	\item 
-  In dieser Aufgabe soll beschrieben werden, welche Klasse und Methode für die
-  Implementierung des ADT Liste als Vektor in C++ gebraucht wird.\\ Die Klasse
-  in C++ die benötigt wird ist vector bzw. std::vector (Quelle:
-  www.c-plusplus.net/forum/140930-fall). Die Methoden sehen wie folgt aus
-  (Quelle: http://en.cppreference.com/w/cpp/container/vector). Dabei habe ich
-  meinen C++ Vektor die Länge n und das erste Element hat den Indize 0.
+  \item 
+    Die Methoden sehen wie folgt aus (Quelle: http://en.cppreference.com/w/cpp/container/vector). 
+    Es sein \texttt{v} ein \texttt{std::vector}: 
 
-  \begin{align}
-    \text{L.first}() &= (\text{std::vektor}) \text{return 0}\quad \mathcal{O}(1)\\
-    \text{L.last}() &= (\text{std::vektor}) \text{return v.size-1}\quad \mathcal{O}(1)\\
-    \text{L.length}() &= (\text{std::vektor}) \text{size ()}\quad \mathcal{O}(1)\\
-    \text{L.retrieve}() &= (\text{std::vektor}) \text{at ()}\quad \mathcal{O}(1)\\
-    \text{L.delete}() &= (\text{std::vektor}) \text{erase ()}\quad \mathcal{O}(n)\\
-    \text{L.insert}() &= (\text{std::vektor}) \text{insert ()}\quad \mathcal{O}(1)
-  \end{align}
-	
-	\item
+    \begin{centering}
+      \begin{tabular}{r c l c}
+        \texttt{L.first}     & $\leftrightarrow$ & \texttt{0}       &   $\mathcal{O}(1)$\\
+        \texttt{L.last}      & $\leftrightarrow$ & \texttt{v.size-1} &   $\mathcal{O}(1)$\\
+        \texttt{L.length}    & $\leftrightarrow$ & \texttt{v.size  }   &   $\mathcal{O}(1)$\\
+        \texttt{L.retrieve}  & $\leftrightarrow$ & \texttt{v.at    }   &   $\mathcal{O}(1)$\\
+        \texttt{L.delete}    & $\leftrightarrow$ & \texttt{v.erase }  &   $\mathcal{O}(n)$\\
+        \texttt{L.insert}    & $\leftrightarrow$ & \texttt{v.insert} &   $\mathcal{O}(1)$
+      \end{tabular}
+    \end{centering}
 
-  Die \texttt{std::deque} ist prinzipiell ein Listen\"ahnlicher Typ,
-  welcher es erm\"oglicht, schnell Elemente am beginn und am 
-  Ende einzuf\"ugen.  Die Klasse std::stack zeichnet sich daraus
-  aus, das immer nur das oberste Elemente verändert werden kann (entfernen,
-  hinzufügen usw.). Dies ist auch in std::deque möglich. Dies Voraussetzung
-  hierzu ist die Beschränkung, das nur die Befehle für das obere Element
-  verwendet werden. Dadurch ist es möglich std::stack durch std::deque zu
-  implementieren. 
+    Der \texttt{std::vector} arbeitet \"ahnlich wie die ADT Liste,
+    die positionen sind jedoch integer indizes. F\"ur die letztendliche
+    implementierung sind noch grenz\"uberpr\"ufungen f\"ur den Zugriff
+    zu beachten, hier sind nur die Funktionen gelistet, mit welchen eine 
+    ADT Liste schnell durch einen Vektor implementiert werden kann.
+    
 
-	\item
-     \texttt{std::deque} ist meist durch eine Doppelt-Verlinkte Liste
-     implementiert. Einf\"ugen von Elementen l\"auft deswegen immer
-     in $\mathcal{O}(1)$. Siehe auch die entsprechende
-     implementierung der ADT Liste. \texttt{std::vector} muss
-     schnellen zuf\"alligen Zugriff auf die Elemente garantieren. Hierzu
-     arbeitet im Hintergrund meist ein Array. Einf\"ugen von Elementen
-     in ein Array kostet im Schlimmsten Fall $\mathcal{O(n)}$ Zeit.
-     Falls der Vektor ausreichend speicher vorallokiert hat, so
-     ist er in der Lage, Elemente schnell am Ende einzuf\"ugen. So 
-     kann eine amortisierte Laufzeit von $\mathcal{O}(1)$ erm\"oglicht werden.
+  \item
 
-	
+    Die \texttt{std::deque} ist prinzipiell ein Listen\"ahnlicher Typ,
+    welcher es erm\"oglicht, schnell Elemente am beginn und am 
+    Ende einzuf\"ugen.  Die Klasse std::stack zeichnet sich daraus
+    aus, das immer nur das oberste Elemente verändert werden kann (entfernen,
+    hinzufügen usw.). Dies ist auch in std::deque möglich. Dies Voraussetzung
+    hierzu ist die Beschränkung, das nur die Befehle für das obere Element
+    verwendet werden. Dadurch ist es möglich std::stack durch std::deque zu
+    implementieren. 
+
+  \item
+    \texttt{std::deque} ist meist durch eine Doppelt-Verlinkte Liste
+    implementiert. Einf\"ugen von Elementen l\"auft deswegen immer
+    in $\mathcal{O}(1)$. Siehe auch die entsprechende
+    implementierung der ADT Liste. \texttt{std::vector} muss
+    schnellen zuf\"alligen Zugriff auf die Elemente garantieren. Hierzu
+    arbeitet im Hintergrund meist ein Array. Einf\"ugen von Elementen
+    in ein Array kostet im Schlimmsten Fall $\mathcal{O}(n)$ Zeit.
+    Falls der Vektor ausreichend speicher vorallokiert hat, so
+    ist er in der Lage, Elemente schnell am Ende einzuf\"ugen. Auf diesem Weg 
+    kann eine amortisierte Laufzeit von $\mathcal{O}(1)$ erm\"oglicht werden.
+
+
 \end{enumerate}
-
 \end{document}
