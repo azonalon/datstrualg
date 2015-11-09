@@ -7,6 +7,7 @@
 \usepackage{courier}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
+\usepackage{epstopdf}
 \lstset{
   numbers=left,
   language=C,
@@ -33,8 +34,15 @@
       \centering
       \includegraphics[width=0.8\textwidth]{hamilton_graph}
       \caption{Hamiltonischer Pfad}
-      \label{fig:hamilton_graph}
+      \label{fig:hamilton_graph.eps}
     \end{figure}
+  \item
+    Es sei $G$ ein Graph $(V, E)$ mit $\abs{V} = n>3$ Knoten.
+    %
+    \begin{align*}
+      |E| =\frac{n^2 - 3n}{2} + 3 = 3-2n \sum_{i=1}^{n} i
+    \end{align*}
+    %
     
 \end{enumerate} 
 
