@@ -89,9 +89,22 @@ sehen.
       \label{fig:hamilton_graph.eps}
     \end{figure}
   \item
-    Diese Aussage ist falsch, da nicht jeder ungerichtete Graph zusammenh\"angend
-    sein muss.
+    Es sei $G$ ein Graph $(V, E)$ mit $\abs{V} = n>3$ Knoten.
     %
+    \begin{align*}
+      |E| & =\frac{n^2 - 3n}{2} + 3 = 3 - n + \sum_{i=1}^{n-1} i \\
+          & = 2  + \sum_{i=1}^{n-2} i
+    \end{align*}
+    %
+    Die Summe bezeichnet die Anzahl aller Kanten eines Vollst\"andigen 
+    Graphen mit $n-1$ Knoten. Der Graph besteht also insgesamt aus einem 
+    Vollst\"andigen Teilgraphen mit $n-1$ Knoten und dem geforderten Knoten
+    mit 2 Kanten. In einem Vollst\"andigen Graphen, ist es trivialerweise
+    m\"oglich einen Hamilton Pfad zu finden, der an zwei beliebigen 
+    Punkten beginnt und endet. Da also so ein Pfad existiert, muss man
+    nurnoch die Verbindungen zu dem Knoten von Grad 2 zum Pfad hinzuaddieren
+    und erh\"alt auf diese Art einen Hamiltonkreis.
+
 \end{enumerate} 
 
 \subsection*{Aufgabe 4}
