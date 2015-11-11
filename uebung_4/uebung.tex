@@ -26,6 +26,51 @@
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 4}
 \begin{document}
 \maketitle
+\subsection*{Aufgabe 1}
+Es sollen folgende Fragen beantwortet werden:\\
+\begin{enumerate}[a)]
+\item
+Ist es möglich eine Queue durch genau einen Stack zu implementieren ?
+
+Nein es ist nicht möglich eine Queue durch genau einen Stack zu implementieren.
+Der Grund hierfür ist, dass bei einem Stack immer das letzte hinzugefügte 
+Element ausgegeben wird. Bei einem Queue jedoch wird das erste Element was 
+hinzugefügt wurde ausgegeben. Dies wird durch Abbildung \ref{fig:a11} grafisch dargestellt.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{datstrualgaufgabe11.png}
+	\caption{Skizze Stack und Queue}
+	\label{fig:a11}
+\end{figure}
+\item
+Ist es möglich einen Stack durch genau einen Queue zu implementieren ?
+
+Nein es ist nicht möglich eine Stack durch genau eine Queue zu implementieren. Die Begründung und die dazugehörige Grafik ist in Aufgabenteil a zu sehen. 
+
+\item
+Ist es möglich eine Queue durch maximal zwei Stack zu implementieren ?
+
+Ja dies ist möglich. Dabei dient der zweite Stack sozusagen als Zwischenspeicher. Wie in Abbildung \ref{fig:a11} zu sehen ist, wird bei einem Queue das erste Element welches hinzugefügt wurde ausgegeben. Dies kann nun durch die zwei Stacks auch realisiert werden. Dazu wird bis auf das erste Element des ersten Stacks die Elemente im zweiten Stack übergeben, sodass nun das erste ausgegeben werden kann. Abbildung \ref{fig:a13} zeigt dies.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{datstrualgaufgabe13.png}
+	\caption{Skizze Stack und Queue}
+	\label{fig:a13}
+\end{figure}
+\item
+Ist es möglich einen Stack durch maximal zwei Queue zu implementieren ?
+
+Ja dies ist möglich. Ähnlich wie in Aufgabenteil c wird nun der zweite Queue als Zwischenspeicher benutzt. Durch das Speichern im zweiten Queue wird das oberste Element frei, sodass dies ausgegeben kann. Dies wird grafisch durch Abbildung \ref{fig:a14} dargestellt.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{datstrualgaufgabe14.png}
+	\caption{Skizze Stack und Queue}
+	\label{fig:a14}
+\end{figure}
+\end{enumerate}
+
+
+
 \subsection*{Aufgabe 2}
 \begin{figure}[h!]
   \centering
