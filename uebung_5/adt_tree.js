@@ -1,7 +1,3 @@
-<html>
-    <body>
-        <h1>ADT Tree</h1>
-        <script>
 class PVTree {
     var preorderArr, degreeArr, elements ;
 
@@ -31,7 +27,3 @@ class PVTree {
         return p + 1 ;
     }
 }
-document.write(5 + 6);
-        </script>
-    </body>
-</html> 
