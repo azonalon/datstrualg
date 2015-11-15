@@ -5,6 +5,8 @@
 \usepackage{enumerate}
 \usepackage{listings}
 \usepackage{courier}
+\usepackage[]{graphicx}
+\usepackage[]{epstopdf}
 \usepackage[margin=1in]{geometry}
 \lstset{
   numbers=left,
@@ -24,5 +26,62 @@
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 5}
 \begin{document}
 \maketitle
+\subsection*{Aufgabe 1}
+\begin{enumerate}[a)] 
+  \item $ $
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=0.4\textwidth]{5_1_a_graph}
+      \caption{Binärgraphenkonstruktion nach Vorlesung}
+    \end{figure}
 
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=0.4\textwidth]{5_1_a_graph_binary}
+      \caption{Binärgraph in kanonischer Darstellung}
+    \end{figure}
+  \item 
+    % Postordnung: links rechts wurzel
+    % Präordnung: wurzel links rechts
+    % Stufenordnung: nächster nachbar wenn existiert sont erster nachbar
+    % auf unterer ebene
+    % Symmetrische Ordnung (inorder) links wurzel rechts für binäre bäume
+    \begin{description}
+
+      \item[Einfacher Baum] $ $
+        \begin{description}
+
+          \item[Stufenordnung] 
+            TFWKOQVRNS
+
+          \item[Präordnung]
+            TFKRNSWOQV
+
+          \item[Postordnung]
+            RNSKFOQVWT
+
+          \item[Symmetrische Ordnung]
+            \emph{Ist nur für binäre Bäume definiert}
+
+        \end{description}
+
+      \item[Binärer Baum] $ $
+        \begin{description}
+
+          \item[Stufenordnung] 
+            TFKWRONQSV
+
+          \item[Präordnung]
+            TFKRNSOQVW
+
+          \item[Postordnung]
+            SNRVQOKWFT
+
+          \item[Symmetrische Ordnung]
+            RNSKOQVFWT
+
+        \end{description}
+    \end{description}
+    
+\end{enumerate} 
 \end{document}
