@@ -35,9 +35,17 @@ class PWTree implements ADTTree{
     /*function parent(p) {
         return NIL;
     }*/
-    /*function detach(p) {
-        return NIL;
-    }*/
+    function detach(p) {
+        for(i = p; i <= p + weightArr[p]; i++) {
+            preorderArr[i] = preorderArr[i + weightArr[i] + 1];
+            elements--;
+        }
+        if(p + weightArr[p] + 1 > elements) {
+            for(i = p + weightArr[p] + 1; i < elements; i++) {
+                preorderArr[i] = preorderArr[i + weightArr[i] + 1];
+            }
+        }
+    }
     function empty() {
         if(elements == 0) return true;
         return false;
