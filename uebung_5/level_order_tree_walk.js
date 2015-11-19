@@ -1,29 +1,23 @@
-LevelOrderTreeWalk(ADT Tree T)
+function LevelOrderTreeWalk(ADT Tree T){}
+    Q = new Queue;
+    root = T.root();
+    Q.enqueue(root);
+    LevelOrderTreeWalkRecurse(root, Q);
+}
 
+function LevelOrderTreeWalkRecurse(ADTTree T, ADTQueue Q){
+    node = Q.dequeue();
+    left = T.left(node);
+    right = T.right(node);
 
-root = T.root();
-node = root;
+    print(T.retrieve(node))
 
-
-function LevelOrderTreeWalk(ADTTree T){
-
-
-	Q = new Queue;
-
-		Q.enqueue(T.root());
-
-			repeat LevelOrderTreeWalkRecursiv{node}
-
-				Q.dequeue(node);
-
-				node = T.left(node)
-				
-				if (node =/ NIL){
-					Q.enqueue(node)
-
-					node = T.right (node)
-					Q.enqueue(node)
-				} else {
-				break
-				}
+    if (left != NIL) {
+        Q.enqueue(left)
+        LevelOrderTreeWalkRecursive(T, Q);
+    }
+    if (right != NIL) {
+        Q.enqueue(right)
+        LevelOrderTreeWalkRecursive(T, Q);
+    }
 }
