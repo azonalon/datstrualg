@@ -83,17 +83,25 @@
         \end{description}
     \end{description}
     \subsection*{Aufgabe 3}
-    \begin{enumerate}[a]
+    \begin{enumerate}[a.)]
     	
       \item
       Die Idee ist, das für den iterativen Algorithmus ein ADT-Stack erstellt
       wird zuerst. In diesem werden immer die Daten von den einzelnen Punkten
       gespeichert. Nun werden die linken Punkte in diesem Stack schrittweise 
       hinzugefügt. Wenn nun das Ende des Stranges erreicht ist, wird das 
-      erste Element aus dem Stack ausgegeben und gelöscht. Dies wird durch den Befehl
+      erste Element aus dem Stack ausgegeben und gelöscht.
       
       
-       \lstinputlisting{inorder_tree_walk.js}
+      \lstinputlisting{inorder_tree_walk.js}
+       
+       
+      \item
+      Die Idee ist, das hierfür ein ADT-Queue als Speicher benutzt wird.
+      Dieser wird zuerst erstellt. Anschließend wird die Wurzel 
+      (das erste Element) gespeichert. Anschließen wird dies ausgegeben.
+      Nun werden die Elemente links und rechts von dem ausgegebenen Element eingelesen. Dieser Vorgang wiederholt sich.
+      \lstinputlisting{level_order_tree_walk.js}
           
     \end{enumerate}
      
