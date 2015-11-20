@@ -10,14 +10,14 @@ function LevelOrderTreeWalkRecurse(ADTTree T, ADTQueue Q){
     left = T.left(node);
     right = T.right(node);
 
-    print(T.retrieve(node))
+    print(T.retrieve(node));
 
     if (left != NIL) {
-        Q.enqueue(left)
-        LevelOrderTreeWalkRecursive(T, Q);
+        Q.enqueue(left);
+        LevelOrderTreeWalkRecurse(T, Q);
     }
     if (right != NIL) {
-        Q.enqueue(right)
-        LevelOrderTreeWalkRecursive(T, Q);
+        Q.enqueue(right);
+        LevelOrderTreeWalkRecurse(T, Q);
     }
 }
