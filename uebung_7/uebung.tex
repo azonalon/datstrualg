@@ -5,13 +5,15 @@
 \usepackage{enumerate}
 \usepackage{listings}
 \usepackage{courier}
+\usepackage[]{graphicx}
+\usepackage[]{epstopdf}
 \usepackage[margin=1in]{geometry}
 \lstset{
   numbers=left,
   language=C,
   basicstyle=\footnotesize\ttfamily,
   breaklines=true,
-  morekeywords={function, NIL}
+  morekeywords={function, NIL, new, class, implements, var, true, false}
 }
 \newcommand{\abs}[1]{\left| #1 \right| }
 \setlength{\parindent}{0pt} 
@@ -21,8 +23,10 @@
   Jens Duffert, 2843110 \\
   Eduard Sauter, 3053470
 }
-\title{Datenstrukturen und Algorithmen: Haus\"ubung 4}
+\title{Datenstrukturen und Algorithmen: Haus\"ubung 7}
 \begin{document}
 \maketitle
+\subsection*{Aufgabe 1}
+  \lstinputlisting{ADTUGraph.js}
 
 \end{document}
