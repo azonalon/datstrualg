@@ -95,10 +95,9 @@
           \item \texttt{v.index}
           \item \texttt{v.lowlink}
         \end{itemize}
-        Au\ss{}erdem werden die Knoten in der Reihenfolge ihres Besuchgangs auf
-        den Stack gehoben. Es ist der Index die Reihenfolge, in denen die
-        Knoten besucht wurden, diese Entspricht wieder genau der Tiefensuche,
-        in \texttt{lowlink} ist jetzt jedoch auch die Information enthalten,
+        Es ist der Index die Reihenfolge, in denen die
+        Knoten besucht wurden, dieser entspricht wieder genau dem der Tiefensuche.
+        In \texttt{lowlink} ist jetzt jedoch auch die Information enthalten
         welcher Index von einem Knoten aus erreichbar ist. Wenn ein Knoten $a$
         sich auf dem Stack unter einem anderen Knoten $b$ befindet, dann gibt
         es einen Pfad $a \to b$. Dies impliziert auch, dass \texttt{a.index <
