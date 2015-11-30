@@ -34,16 +34,33 @@ class Graph:
 class WeightedGraph:
     """ Example:
     graph = Graph({
-        'A': [('B', 1.5), ('C', 0.1)],
-        'B': [('A', 3.2), ('C', 0.5)],
-        'C': [('A', 5.1), ('B', 3.0)]
+        'A': { 'B': 1.5, 'C': 0.1 },
+        'B': { 'A': 3.2, 'C': 0.5 },
+        'C': { 'A': 5.1, 'B': 3.0 }
     })
     """
-    def __init__(self):
+    def __init__(self, graph):
+        self.graph = graph
+
+    def outAdjacent(self, node):
+        return graph[node].keys()
+
+    def inAdjacent(self, node):
+        # TODO: implement
         pass
-    # TODO: Implement
 
+    def weight(self, a, b):
+        return self.graph[a].get(b, 0.0)
 
+    def nodes(self):
+        return list(self.graph.keys())
+
+    def edges(self):
+        return sum(
+            [
+                [(node[0], adjacent[0], adjacent[1]) for adjacent in node[1].items()]
+                for node in self.graph.items()
+            ], [])
 
 
 
@@ -51,6 +68,14 @@ graph = Graph({
     'A': ['B', 'C'],
     'B': ['A', 'C'],
     'C': ['A', 'B']
+})
+
+wgraph = WeightedGraph({
+    's': {'t': 10, 'y': 5},
+    't': {'y': 2, 'x': 1},
+    'x': {'z': 4         },
+    'y': {'t':  3, 'x': 9, 'z': 2},
+    'z': {'s':  7, 'x': 6},
 })
 
 def BreadthFirstSearch(graph, node):
@@ -126,22 +151,26 @@ def DepthFirstSearch(graph, node):
 
 
 
-
 # Plot the graph with graphviz
 def View(graph, is_directed=True):
-    graph = graph.graph
+    graph = graph
     if is_directed:
         g = graphviz.Digraph()
     else:
-        g = graphviz.Digraph()
+        g = graphviz.Graph()
 
-    for node, adjacents in graph.items():
-        g.node(node)
-        for adjacent in adjacents:
-            g.edge(node, adjacent)
+    for n in graph.nodes():
+        g.node(n)
+    for e in graph.edges():
+        g.edge(*map(str,e))
 
     g.view()
 
-BreadthFirstSearch(graph,  'A')
-DepthFirstSearch(graph,  'A')
-View(graph)
+print(graph.edges())
+print(graph.nodes())
+print(wgraph.edges())
+print(wgraph.nodes())
+# BreadthFirstSearch(graph,  'A')
+# DepthFirstSearch(graph,  'A')
+# View(graph)
+View(wgraph)

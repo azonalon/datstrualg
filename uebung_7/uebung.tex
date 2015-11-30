@@ -81,8 +81,63 @@
 \newpage
 
       \item \emph{Der Tarjan Algorithmus} \\
-        Das Ziel dieses Algorithmus ist es, die Starken zusammenhangskomponenten
-        eines gerichteten Graphen zu bestimmen.
+        Das Ziel dieses Algorithmus' ist es, die starken Zusammenhangskomponenten
+        eines gerichteten Graphen zu bestimmen. Der folgende Code ist aus
+        cpettitt's graphlib entnommen:
+        \lstinputlisting{tarjan.js}
+
+        Der Algorithmus \"ahnelt der in der Vorlesung besprochenen Tiefensuche,
+        Die Buchf\"uhrung des Algorithmus ist jedoch abgewandelt. Es gibt noch
+        die zus\"atzlich die Variablen
+        \begin{itemize}
+          \item \texttt{stack}
+          \item \texttt{v.onStack}
+          \item \texttt{v.index}
+          \item \texttt{v.lowlink}
+        \end{itemize}
+        Au\ss{}erdem werden die Knoten in der Reihenfolge ihres Besuchgangs auf
+        den Stack gehoben. Es ist der Index die Reihenfolge, in denen die
+        Knoten besucht wurden, diese Entspricht wieder genau der Tiefensuche,
+        in \texttt{lowlink} ist jetzt jedoch auch die Information enthalten,
+        welcher Index von einem Knoten aus erreichbar ist. Wenn ein Knoten $a$
+        sich auf dem Stack unter einem anderen Knoten $b$ befindet, dann gibt
+        es einen Pfad $a \to b$. Dies impliziert auch, dass \texttt{a.index <
+        b.index} ist.  Falls umgekehrt \texttt{b.lowlink  == a.lowlink} dann
+        gibt es auch einen Pfad $b \to a$.
+
+        Diese \"Uberlegung begr\"undet Zeile 19-20 des Algorithmus: Wenn
+        ein Knoten ``grau'' ist, also auf dem Stack, und der \texttt{lowlink}
+        des Knoten auf dem Stack kleiner ist, dann haben wir einen Pfad zu-
+        und von diesem Knoten gefunden, der \texttt{lowlink} des 
+        momentanen Knotens wird also herabgesetzt und der Knoten wird
+        als Teil der starken Zusammenhangskomponente, in welcher der Knoten
+        auf dem Stack ist, vermerkt. Salopp gesagt ``sucht'' der Algorithmus
+        den niedrigsten Index eines anderen Knotens auf dem Stack der von
+        diesem aus erreichbar ist. Wenn ein niedrigerer Index als
+        \texttt{v.lowlink} gefunden wird, dann ist der Knoten Teil einer
+        Zusammenhangskomponente welcher zurzeit in Bearbeitung ist.
+
+        Die Knoten werden also in Reihenfolge ihrer Besuchung auf den Stack
+        getan. Wenn am Ende des Funktionsaufrufs kein Knoten mit
+        geringerem Index gefunden wurde, dann werden alle Knoten \"uber
+        dem jetztigen auf dem Stack als Teil dessen starker
+        Zusammenhangskomponente erachtet und vom Stack genommen. Die Knoten
+        ``bleiben'' also nur dann auf dem Stack, wenn sie in einer
+        Zusammenangskomponente eines anderen Knoten auf dem Stack sind.
+        
+        Man kann den ersten besuchten Knoten einer starken
+        Zusammenhangskomponente auszeichnen, da er den geringsten Index
+        besitzt. Nur f\"ur einen solchen Knoten kann \texttt{lowlink  == index}
+        gelten. Wenn dies nun am Ende des Aufrufs von \texttt{dfs} gilt, dann
+        sind alle Knoten \"uber der Wurzel auf dem Stack in einer Starken
+        Zusammenhangskomponente mit dieser. Die Zusammenhangskomponenten haben
+        also alle ihren eigenen \texttt{index}, welcher durch den Index des
+        ersten besuchten Knotens der Komponente gegeben ist.
+
+
+
+
+
 
 
 \end{enumerate} 
