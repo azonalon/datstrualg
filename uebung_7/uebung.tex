@@ -13,7 +13,7 @@
   language=C,
   basicstyle=\footnotesize\ttfamily,
   breaklines=true,
-  morekeywords={function, NIL}
+  morekeywords={function, NIL, new, class, implements, var, true, false}
 }
 \newcommand{\abs}[1]{\left| #1 \right| }
 \setlength{\parindent}{0pt} 
@@ -23,9 +23,10 @@
   Jens Duffert, 2843110 \\
   Eduard Sauter, 3053470
 }
-\title{Datenstrukturen und Algorithmen: Haus\"ubung 4}
+\title{Datenstrukturen und Algorithmen: Haus\"ubung 7}
 \begin{document}
 \maketitle
+<<<<<<< HEAD
 \subsection*{Aufgabe 2}
 \begin{enumerate}[a)]
 \item
@@ -54,6 +55,123 @@ Wertung genommen. Dies wird mit allen weiteren Wegen gemacht.
 \end{figure}
 Das Ergebnis des minimalen Spannbaum ist in Abbildung \ref{fig:a2} rechts unten
 zu sehen. Dieses lautet:
+=======
+\subsection*{Aufgabe 1}
+  \lstinputlisting{ADTUGraph.js}
+
+
+  \newpage
+\section*{Aufgabe 3}
+\begin{enumerate}[a)]
+
+  \item Die \emph{graphlib} von cpettit. Hier eine Zusammenfassung des
+    Abschnittes ``Graph Concepts'' aus der Dokumentation:
+    \begin{description}
+      \item[Directed] 
+        Dies ist der Standard-Typ. Die Kanten sind gerichtet.
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.5\textwidth]{./tarjan.png}
+          \label{fig:}
+        \end{figure}
+
+      \item[Undirected]
+        Diese sind analog zu denen in der Vorlesung.
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.5\textwidth]{prim-input.png}
+          \label{fig:input}
+        \end{figure}
+
+      \item[Multigraph]
+        Hier k\"onnen mehrere Kanten zwei gleiche Knoten verbinden. Nicht
+        zu verwechseln mit einem ``Hypergraphen'', bei dem eine Kante mehrere
+        Knoten verbinden kann.
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.5\textwidth]{weighted-multigraph.png}
+          \label{fig:multigraph}
+        \end{figure}
+
+      \item[Compound]
+        Diese sind wie B\"aume mit Wurzeln. Es l\"asst sich eine Kind-Elternteil
+        Hirarchie auf den Knoten beschreiben.
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.3\textwidth]{preorder.png}
+          \label{fig:preorder}
+        \end{figure}
+        
+        
+        \end{description}
+\newpage
+
+      \item \emph{Der Tarjan Algorithmus} \\
+        Das Ziel dieses Algorithmus' ist es, die starken Zusammenhangskomponenten
+        eines gerichteten Graphen zu bestimmen. Der folgende Code ist aus
+        cpettitt's graphlib entnommen:
+        \lstinputlisting{tarjan.js}
+
+        Der Algorithmus \"ahnelt der in der Vorlesung besprochenen Tiefensuche,
+        Die Buchf\"uhrung des Algorithmus ist jedoch abgewandelt. Es gibt noch
+        die zus\"atzlich die Variablen
+        \begin{itemize}
+          \item \texttt{stack}
+          \item \texttt{v.onStack}
+          \item \texttt{v.index}
+          \item \texttt{v.lowlink}
+        \end{itemize}
+        Es ist der Index die Reihenfolge, in denen die
+        Knoten besucht wurden, dieser entspricht wieder genau dem der Tiefensuche.
+        In \texttt{lowlink} ist jetzt jedoch auch die Information enthalten
+        welcher Index von einem Knoten aus erreichbar ist. Wenn ein Knoten $a$
+        sich auf dem Stack unter einem anderen Knoten $b$ befindet, dann gibt
+        es einen Pfad $a \to b$. Dies impliziert auch, dass \texttt{a.index <
+        b.index} ist.  Falls umgekehrt \texttt{b.lowlink  == a.lowlink} dann
+        gibt es auch einen Pfad $b \to a$.
+
+        Diese \"Uberlegung begr\"undet Zeile 19-20 des Algorithmus: Wenn
+        ein Knoten ``grau'' ist, also auf dem Stack, und der \texttt{lowlink}
+        des Knoten auf dem Stack kleiner ist, dann haben wir einen Pfad zu-
+        und von diesem Knoten gefunden, der \texttt{lowlink} des 
+        momentanen Knotens wird also herabgesetzt und der Knoten wird
+        als Teil der starken Zusammenhangskomponente, in welcher der Knoten
+        auf dem Stack ist, vermerkt. Salopp gesagt ``sucht'' der Algorithmus
+        den niedrigsten Index eines anderen Knotens auf dem Stack der von
+        diesem aus erreichbar ist. Wenn ein niedrigerer Index als
+        \texttt{v.lowlink} gefunden wird, dann ist der Knoten Teil einer
+        Zusammenhangskomponente welcher zurzeit in Bearbeitung ist.
+
+        Die Knoten werden also in Reihenfolge ihrer Besuchung auf den Stack
+        getan. Wenn am Ende des Funktionsaufrufs kein Knoten mit
+        geringerem Index gefunden wurde, dann werden alle Knoten \"uber
+        dem jetztigen auf dem Stack als Teil dessen starker
+        Zusammenhangskomponente erachtet und vom Stack genommen. Die Knoten
+        ``bleiben'' also nur dann auf dem Stack, wenn sie in einer
+        Zusammenangskomponente eines anderen Knoten auf dem Stack sind.
+        
+        Man kann den ersten besuchten Knoten einer starken
+        Zusammenhangskomponente auszeichnen, da er den geringsten Index
+        besitzt. Nur f\"ur einen solchen Knoten kann \texttt{lowlink  == index}
+        gelten. Wenn dies nun am Ende des Aufrufs von \texttt{dfs} gilt, dann
+        sind alle Knoten \"uber der Wurzel auf dem Stack in einer Starken
+        Zusammenhangskomponente mit dieser. Die Zusammenhangskomponenten haben
+        also alle ihren eigenen \texttt{index}, welcher durch den Index des
+        ersten besuchten Knotens der Komponente gegeben ist.
+
+
+
+
+
+
+
+\end{enumerate} 
+
+>>>>>>> 0b53cd8f1f81e8add2bdd41842d38bae09b0748f
 
 \begin{align*}
 A \rightarrow D \rightarrow C \rightarrow E \rightarrow B \rightarrow G \rightarrow F
