@@ -1,6 +1,6 @@
-class AMDFGraph implements ADTUGraph{
+class AdjMatGraph implements ADTUGraph{
     // Die Knoten werden wie im Tiefendurchlauf geordnet.
-    var adjacencyMatrix, depthFirstList;
+    var adjacencyMatrix, nodeList;
     function create() {
         // Die Adjazenzmatrix wird als verkettete Liste von
         // verketteten Listen implementiert.
@@ -8,11 +8,11 @@ class AMDFGraph implements ADTUGraph{
         adjacencyMatrix.create();
         // Auch die Knoten werden in einer verketteten Liste
         // gespeichert.
-        depthFirstList = new LinkedList;
-        depthFirstList.create();
+        nodeList = new LinkedList;
+        nodeList.create();
     }
     function nodeValue(u) {
-        return depthFirstList.retrieve(u);
+        return nodeList.retrieve(u);
     }
     function areAdjacent?(u, v) {
         if(adjacencyMatrix.retrieve(u).retrieve(v) == 0 &&
@@ -27,23 +27,17 @@ class AMDFGraph implements ADTUGraph{
     function edgeWeight(u, v) {
         return adjacencyMatrix.retrieve(u).retrieve(v);
     }
-    function sort() {
-        // Ordnet die Knoten in der Reihenfolge eines
-        // Tiefendurchlaufs.
-    }
     function iterationStart() {
-        sort();
-        return depthFirstList.retrieve(0);
+        return nodeList.retrieve(0);
     }
     function iterationNext(u) {
-        if(u = depthFirstList.length() - 1) {
+        if(u = nodeList.length() - 1) {
             return NIL;
         }
         return u + 1;
     }
     function adjacentStart(u) {
-        sort();
-        for(i = 0; i < depthFirstList.length(); i++) {
+        for(i = 0; i < nodeList.length(); i++) {
             if(adjacencyMatrix.retrieve(i).retrieve(u) != 0) {
                 return i;
             }
@@ -51,7 +45,7 @@ class AMDFGraph implements ADTUGraph{
         return NIL;
     }
     function adjacentNext(u, v) {
-        for(i = v + 1; i < depthFirstList.length(); i++) {
+        for(i = v + 1; i < nodeList.length(); i++) {
             // Sucht beginnend bei v+1 nach einer Kante
             // (Eintrag ungleich null in der Adjazenzmatrix).
             if(adjacencyMatrix.retrieve(u).retrieve(i) != 0) {
@@ -61,9 +55,9 @@ class AMDFGraph implements ADTUGraph{
         return NIL;
     }
     function insert(x) {
-        elements = depthFirstList.length();
-        // Das Element wird ans Ende von depthFirstList angefuegt.
-        depthFirstList.insert(elements, x);
+        elements = nodeList.length();
+        // Das Element wird ans Ende von nodeList angefuegt.
+        nodeList.insert(elements, x);
         // Die Adjazenzmatrix wird mit verketteten Listen
         // gefuellt.
         newColumn = new LinkedList;
@@ -79,17 +73,17 @@ class AMDFGraph implements ADTUGraph{
         }
     }
     function remove(u) {
-        for(i = 0; i < depthFirstList.length(); i++) {
+        for(i = 0; i < nodeList.length(); i++) {
             // Die zu u gehoerige Zeile in der Adjazenzmatrix wird
             // geloescht.
             adjacencyMatrix.retrieve(u).delete(i);
         }
-        for(i = 0; i < depthFirstList.length() - 1; i++) {
+        for(i = 0; i < nodeList.length() - 1; i++) {
             // Die zugehoerige Spalte wird geloescht.
             adjacencyMatrix.retrieve(i).delete(u);
         }
         // Der Knoten wird geloescht.
-        depthFirstList.delete(u);
+        nodeList.delete(u);
     }
     function changeWeight(u, v, w) {
         // Das Gewicht der Kante (u, v) wird in der
