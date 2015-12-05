@@ -1,6 +1,7 @@
 #!/bin/python
 import graphviz
 from collections import deque
+import heapq
 
 
 class Graph:
@@ -109,11 +110,6 @@ def BreadthFirstSearch(graph, node):
     print('predecessors :', pred)
 
 
-
-
-
-
-
 def DepthFirstSearch(graph, node):
     print('Depth First Search')
     color = dict((n, 'white') for n in graph.nodes())
@@ -149,6 +145,48 @@ def DepthFirstSearch(graph, node):
     print('predecessors :', pred)
 
 
+class PriorityQeue:
+    heap = []
+    def enqueue(tup):
+        """ tup = ('a', 23.4) """
+
+def dijkstra(graph, node):
+    """ takes a weighted graph and gives the minimal distance of node
+    to all other nodes """
+
+    color = dict((n, 'white') for n in graph.nodes())
+    distance = dict((n, float('inf')) for n in graph.nodes())
+    distance[node] = 0
+    pred = {}
+
+    def visit(node):
+        q = deque()
+        color[node] = 'grey'
+        # q.appendleft(node)
+        while len(q) != 0:
+
+            for adjacent in graph.outAdjacent(current_node):
+                if color[adjacent] is 'white':
+                    color[adjacent] = 'grey'
+                    distance[adjacent] = distance[current_node] \
+                        + graph.weight(current_node, adjacent)
+                    pred[adjacent] = current_node
+                    q.appendleft(adjacent)
+                elif color[adjacent] is 'grey':
+                    new_path_dist = distance[current_node] + \
+                        graph.weight(current_node, adjacent)
+                    if distance[adjacent] > new_path_dist:
+                        distance[adjacent] = new_path_dist
+
+            color[current_node] = 'black'
+
+
+    visit(node)
+
+    for node, color in color.items():
+        if color is 'white':
+            visit(node)
+    return distance
 
 
 # Plot the graph with graphviz

@@ -27,84 +27,169 @@
 \begin{document}
 \maketitle
 \subsection*{Aufgabe 1}
-  In der Stundenübung 8.1(b) haben wir für die mittlere Zugriffszahl bei der
-  erfolgreichen Suche gezeigt:
-  \begin{align*}
-    m(x \vert x \in S) = \frac{\sum_{x \in S} p(x) z(x)}{\sum_{x \in S} p(x)}
-  \end{align*}
-  Dabei ist $x$ ein Schlüssel, $S$ die Menge aller Schlüssel, $p(x)$ die
-  Wahrscheinlichkeit der Suche nach $x$ und $z(x)$ die Anzahl der benötigten
-  Zugriffe um $x$ zu finden. Für die lineare Suche entspricht $z(x)$ immer der
-  Position von $x$ in der Tabelle (beginnend bei 1). In diesem Beispiel ergibt
-  sich:
-  \begin{align*}
-    \sum_{x \in S} p(x) &= 1 \\
-    \Rightarrow m(x \vert x \in S) &= \sum_{x \in S} p(x) z(x)
-  \end{align*}
-  \begin{enumerate}[a)]
-    \item 
-      In der gegebenen Reihenfolge hat man die Werte:
-      \begin{table}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+In der Stundenübung 8.1(b) haben wir für die mittlere Zugriffszahl bei der
+erfolgreichen Suche gezeigt:
+\begin{align*}
+  m(x \vert x \in S) = \frac{\sum_{x \in S} p(x) z(x)}{\sum_{x \in S} p(x)}
+\end{align*}
+Dabei ist $x$ ein Schlüssel, $S$ die Menge aller Schlüssel, $p(x)$ die
+Wahrscheinlichkeit der Suche nach $x$ und $z(x)$ die Anzahl der benötigten
+Zugriffe um $x$ zu finden. Für die lineare Suche entspricht $z(x)$ immer der
+Position von $x$ in der Tabelle (beginnend bei 1). In diesem Beispiel ergibt
+sich:
+\begin{align*}
+  \sum_{x \in S} p(x) &= 1 \\
+  \Rightarrow m(x \vert x \in S) &= \sum_{x \in S} p(x) z(x)
+\end{align*}
+\begin{enumerate}[a)]
+  \item 
+    In der gegebenen Reihenfolge hat man die Werte:
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline 
         $x$ & J & Y & O & S & E & K & N & T & R & I & C & B \\ 
         \hline 
         $p(x)$ & 0,048 & 0,049 & 0,2 & 0,32 & 0,08 & 0,008 & 0,068 & 0,069 &
-          0,07 & 0,028 & 0,051 & 0,009 \\ 
+        0,07 & 0,028 & 0,051 & 0,009 \\ 
         \hline 
         $z(x)$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ 
         \hline 
-        \end{tabular} 
-      \end{table}
-      
-      Damit ergibt sich:
-      \begin{align*}
-        m(x \vert x \in S) = 5,081
-      \end{align*}
-    \item 
-      Ordnet man die Schlüssel nach steigender Wahrscheinlichkeit, so sind die
-      Zugriffszahlen und Wahrscheinlichkeiten:
-      \begin{table}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \end{tabular} 
+    \end{table}
+
+    Damit ergibt sich:
+    \begin{align*}
+      m(x \vert x \in S) = 5,081
+    \end{align*}
+  \item 
+    Ordnet man die Schlüssel nach steigender Wahrscheinlichkeit, so sind die
+    Zugriffszahlen und Wahrscheinlichkeiten:
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline 
         $x$ & K & B & I & J & Y & C & N & T & R & E & O & S \\ 
         \hline 
         $p(x)$ & 0,008 & 0,009 & 0,028 & 0,048 & 0,049 & 0,051 & 0,068 & 0,069 &
-          0,07 & 0,08 & 0,2 & 0,32 \\ 
+        0,07 & 0,08 & 0,2 & 0,32 \\ 
         \hline 
         $z(x)$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ 
         \hline 
-        \end{tabular} 
-      \end{table}
-      
-      Als Ergebnis erhält man:
-      \begin{align*}
-        m(x \vert x \in S) = 9,351
-      \end{align*}
-  \newpage
-    \item 
-      Für den nach fallender Wahrscheinlichkeit sortierten Schlüssel sind die
-      Werte:
-      \begin{table}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \end{tabular} 
+    \end{table}
+
+    Als Ergebnis erhält man:
+    \begin{align*}
+      m(x \vert x \in S) = 9,351
+    \end{align*}
+    \newpage
+  \item 
+    Für den nach fallender Wahrscheinlichkeit sortierten Schlüssel sind die
+    Werte:
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline 
         $x$ & S & O & E & R & T & N & C & Y & J & I & B & K \\ 
         \hline 
         $p(x)$ & 0,32 & 0,2 & 0,08 & 0,07 & 0,069 & 0,068 & 0,051 & 0,049 &
-          0,048 & 0,028 & 0,009 & 0,008 \\ 
+        0,048 & 0,028 & 0,009 & 0,008 \\ 
         \hline 
         $z(x)$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ 
         \hline 
-        \end{tabular} 
-      \end{table}
-      
-      Die mittlere Zugriffszahl der erfolgreichen Suche ist dann:
-      \begin{align*}
-        m(x \vert x \in S) = 3,649
-      \end{align*}
-  \end{enumerate}
+      \end{tabular} 
+    \end{table}
+
+    Die mittlere Zugriffszahl der erfolgreichen Suche ist dann:
+    \begin{align*}
+      m(x \vert x \in S) = 3,649
+    \end{align*}
+\end{enumerate}
+\subsection*{Aufgabe 2}
+\begin{enumerate}[a)]
+  \item  $ $
+    \begin{enumerate}[i)]
+      \item Die mittlere Zugriffszahl aller Suchanfragen ergibt sich analog
+        zur Berechnung ohne Marker wie in Aufgabe 1. Nach befragung seines
+        lieblings Computeralgebrasystems erh\"alt man
+        %
+        \begin{align*}
+          m_\text{alle} = \frac{741}{100}
+        \end{align*}
+        %
+      \item Hier muss man alle Elemente mit Marker 0 aus der Rechnung 
+        herausnehmen und das ganze normieren. 
+        Es sei $\mu_i$ der $i$-te Marker. Die Formel ist dann
+        %
+        \begin{align*}
+          m_\text{erfolgreich} = \frac{\sum_{i=0}^{11} \mu_i p_i (i+1)}{
+          \sum_{i=0}^{11} \mu_i p_i} = \frac{373}{64}
+        \end{align*}
+        %
+      \item F\"ur diese Rechnung m\"ussen genau alle Marker mit Wert 0
+        ber\"ucksichtig werden, und alle Elemente die nicht im Array sind.
+        Dazu sei dann $\lambda = 1 - \sum_{i=0}^{11} p_i$.
+        Man erh\"alt dann wieder mit normierung:
+        %
+        \begin{align*}
+          m_\text{erfolglos} = \frac{12 \lambda + \sum_{i=0}^{11} (1-\mu_i) p_i (i+1) }{
+          \lambda + \sum_{i=0}^{11} (1-\mu_i) p_i } = \frac{21}{2}
+        \end{align*}
+        %
+        <++>
+    \end{enumerate} 
+  \item $ $
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{r | c c c c c c c c c c c c c}
+        \hline\hline
+        \textbf{Index} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+        \hline
+        \textbf{Sequenz} & G & F & C & A & D & E & L & R & K & N & O & M \\
+        \textbf{Marker} & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+        Gesucht: D  & G & F & C & D & A & E & L & R & K & N & O & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         A  & G & F & C & A & D & E & L & R & K & N & O & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         S  & G & F & C & A & D & E & L & R & K & N & S & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         W  & G & F & C & A & D & E & L & R & K & N & W & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         E  & G & F & C & A & E & D & L & R & K & N & W & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         L  & G & F & C & A & E & L & D & R & K & N & W & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         F  & F & G & C & A & E & L & D & R & K & N & W & M \\
+                    & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         E  & F & G & C & E & A & L & D & R & K & N & W & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         N  & F & G & C & E & A & L & D & R & N & K & W & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         L  & F & G & C & E & L & A & D & R & N & K & W & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         A  & F & G & C & E & A & L & D & R & N & K & W & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+         B  & F & G & C & E & A & L & D & R & N & K & B & M \\
+                    & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+      \end{tabular}
+    \end{table}
+    
+  \item $ $
+    \lstinputlisting{search_sequence.js}
+\end{enumerate} 
 
 \end{document}

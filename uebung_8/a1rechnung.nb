@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3493,        125]
-NotebookOptionsPosition[      2929,        100]
-NotebookOutlinePosition[      3272,        115]
-CellTagsIndexPosition[      3229,        112]
+NotebookDataLength[      7690,        248]
+NotebookOptionsPosition[      6752,        211]
+NotebookOutlinePosition[      7087,        226]
+CellTagsIndexPosition[      7044,        223]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -96,11 +96,122 @@ Cell[BoxData[{
 Cell[BoxData["3.649`"], "Output",
  CellChangeTimes->{{3.6583092629165506`*^9, 3.658309267932434*^9}, 
    3.6583093977204266`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Aufgabe 8.2", "Subsubsection",
+ CellChangeTimes->{{3.65832796626855*^9, 3.658327975162084*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "12", ",", "4", ",", "10", ",", "3", ",", "6", ",", "11", ",", "4", ",", 
+      "2", ",", "3", ",", "8", ",", "2", ",", "10"}], "}"}], "/", "100"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"marker", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", ",", "0",
+      ",", "1", ",", "1", ",", "0", ",", "1"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"successfull", "=", 
+  RowBox[{"Total", "[", "p", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"unsuccessfull", "=", 
+  RowBox[{"1", "-", "successfull"}]}], "\[IndentingNewLine]", 
+ RowBox[{"allRequestMeanAccessCount", "=", 
+  RowBox[{
+   RowBox[{"p", ".", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"Length", "[", "p", "]"}]}], "]"}]}], "+", 
+   RowBox[{
+    RowBox[{"Length", "[", "p", "]"}], "*", 
+    "unsuccessfull"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"succesfullRequestMeanAccessCount", "=", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"p", "*", "marker"}], ")"}], ".", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"Length", "[", "p", "]"}]}], "]"}]}], "/", 
+   RowBox[{"Total", "[", 
+    RowBox[{"p", "*", "marker"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"antimarker", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"#", "\[Equal]", "1"}], ",", "0", ",", "1"}], "]"}], "&"}], "/@",
+    "marker"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"unsuccesfullRequestMeanAccessCount", "=", "\[IndentingNewLine]", 
+   FractionBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"p", "*", "antimarker"}], ")"}], ".", 
+       RowBox[{"Range", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"Length", "[", "p", "]"}]}], "]"}]}], "+", 
+      RowBox[{"unsuccessfull", "*", 
+       RowBox[{"Length", "[", "p", "]"}]}]}], ")"}], 
+    RowBox[{
+     RowBox[{"Total", "[", 
+      RowBox[{"p", "*", "antimarker"}], "]"}], "+", "unsuccessfull"}]]}], 
+  "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.658328038740582*^9, 3.658328103653014*^9}, {
+   3.6583281601148653`*^9, 3.6583281622383337`*^9}, {3.6583282276046753`*^9, 
+   3.658328248549567*^9}, {3.65832827858468*^9, 3.65832829344044*^9}, {
+   3.658328355946747*^9, 3.658328373525794*^9}, {3.658328648106881*^9, 
+   3.658328686075542*^9}, {3.658328718369101*^9, 3.6583288439919453`*^9}, {
+   3.6583289775137997`*^9, 3.658329031985952*^9}, {3.658329127295938*^9, 
+   3.658329161483287*^9}, {3.658329243136503*^9, 3.658329257164003*^9}, {
+   3.658329595011458*^9, 3.658329601772595*^9}, {3.65832987824755*^9, 
+   3.658329988419964*^9}, 3.6583300252488537`*^9, {3.658330082739184*^9, 
+   3.658330086213833*^9}, {3.6583301209500313`*^9, 3.6583301924220467`*^9}}],
+
+Cell[BoxData[
+ FractionBox["3", "4"]], "Output",
+ CellChangeTimes->{3.658330485557246*^9}],
+
+Cell[BoxData[
+ FractionBox["1", "4"]], "Output",
+ CellChangeTimes->{3.658330485558387*^9}],
+
+Cell[BoxData[
+ FractionBox["751", "100"]], "Output",
+ CellChangeTimes->{3.6583304855597973`*^9}],
+
+Cell[BoxData[
+ FractionBox["373", "64"]], "Output",
+ CellChangeTimes->{3.658330485561173*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1", 
+   ",", "0", ",", "0", ",", "1", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.658330485562395*^9}],
+
+Cell[BoxData[
+ FractionBox["21", "2"]], "Output",
+ CellChangeTimes->{3.658330485563593*^9}]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{759, 601},
-WindowMargins->{{Automatic, 295}, {24, Automatic}},
-FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 29, 2015)",
+WindowSize->{956, 1060},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (October 9, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -115,21 +226,32 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 700, 18, 72, "Input"],
-Cell[1283, 42, 98, 1, 31, "Output"],
-Cell[1384, 45, 99, 1, 31, "Output"]
+Cell[580, 22, 700, 18, 77, "Input"],
+Cell[1283, 42, 98, 1, 32, "Output"],
+Cell[1384, 45, 99, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1520, 51, 553, 17, 52, "Input"],
-Cell[2076, 70, 113, 1, 31, "Output"]
+Cell[1520, 51, 553, 17, 55, "Input"],
+Cell[2076, 70, 113, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2226, 76, 555, 17, 52, "Input"],
-Cell[2784, 95, 129, 2, 31, "Output"]
+Cell[2226, 76, 555, 17, 55, "Input"],
+Cell[2784, 95, 129, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2950, 102, 101, 1, 32, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[3076, 107, 2948, 73, 336, "Input"],
+Cell[6027, 182, 90, 2, 47, "Output"],
+Cell[6120, 186, 90, 2, 47, "Output"],
+Cell[6213, 190, 96, 2, 47, "Output"],
+Cell[6312, 194, 93, 2, 47, "Output"],
+Cell[6408, 198, 222, 5, 32, "Output"],
+Cell[6633, 205, 91, 2, 47, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
