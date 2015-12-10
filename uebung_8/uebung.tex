@@ -106,14 +106,13 @@ sich:
       m(x \vert x \in S) = 3,649
     \end{align*}
 \end{enumerate}
-\newpage
 \subsection*{Aufgabe 2}
 \begin{enumerate}[a)]
   \item  $ $
     \begin{enumerate}[i)]
       \item Die mittlere Zugriffszahl aller Suchanfragen ergibt sich analog
-        zur Berechnung ohne Marker wie in Aufgabe 1. Nach befragung seines
-        lieblings Computeralgebrasystems erh\"alt man
+        zur Berechnung ohne Marker wie in Aufgabe 1. Nach Befragung seines
+        Lieblings Computeralgebrasystems erh\"alt man
         %
         \begin{align*}
           m_\text{alle} = \frac{741}{100}
@@ -131,7 +130,7 @@ sich:
       \item F\"ur diese Rechnung m\"ussen genau alle Marker mit Wert 0
         ber\"ucksichtig werden, und alle Elemente die nicht im Array sind.
         Dazu sei dann $\lambda = 1 - \sum_{i=0}^{11} p_i$.
-        Man erh\"alt dann wieder mit normierung:
+        Man erh\"alt dann wieder mit Normierung:
         %
         \begin{align*}
           m_\text{erfolglos} = \frac{12 \lambda + \sum_{i=0}^{11} (1-\mu_i) p_i (i+1) }{
@@ -202,39 +201,39 @@ die Werte eingefügt werden. Dies wird anhand eines Wertes gezeigt, da die
 anderen Werte äquivalent berechnet werden.
 
 \begin{align*}
-	h(z) &= (2z+5)\\
+	h(z) &= (2z+5) \mod 11\\
 	z &= 12\\
-	h(12) &= (2 \cdot 12 + 5)\\
-	h(12) &= 29 
+	h(12) &= (2 \cdot 12 + 5) \mod 11\\
+	h(12) &= 7 
 \end{align*}
-Dies wurde auch mit den anderes Werten gemacht. Diese werden nun in die Tabelle mit mod 11 eingeschrieben.
+Dies wurde auch mit den anderen Werten gemacht. Diese werden nun in die Tabelle eingeschrieben.
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline\hline
-		\textbf{Eintrag}&\textbf{h(s)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+		\textbf{Eintrag}&\textbf{h(s)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
 		\hline
-		12 & 29 & & & & & & & & 12 & & & & &\\
+		12 & 7 & & & & & & & & 12 & & & &\\
 		\hline
-		44 & 93 & & & & & & 44 & & & & & & &\\
+		44 & 5 & & & & & & 44 & & & & & &\\
 		\hline
-		13 & 31 & & & & & & & & & 9 & & & &\\
+		13 & 9 & & & & & & & & & & 13 & &\\
 		\hline
-		88 & 181 & & & & & & $\rightarrow$ & 88 & & & & & &\\
+		88 & 5 & & & & & & $\rightarrow$ & 88 & & & & &\\
 		\hline
-		23 & 51 & & & & & & & & 23 & & & & &\\
+		23 & 7 & & & & & & & & $\rightarrow$ & 23 & & &\\
 		\hline
-		94 & 193 & & & & & & & 6 & & & & & &\\
+		94 & 6 & & & & & & & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & 94 &\\
 		\hline
-		11 & 27 & & & & & & $\rightarrow$ & $\rightarrow$ & 11 & & & & &\\
+		11 & 5 & & & & & & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & 5 \\
 		\hline
-		39 & 83 & & & & & & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & 39 & & & &\\
+		39 & 6 & 39 & & & & & & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ \\
 		\hline
-		20 & 45 & 23 & & & & & & & & & & & &\\
+		20 & 1 & & 20 & & & & & & & & & &\\
 		\hline
-		16 & 37 & & & & & 16 & &  & & & & & &\\
+		16 & 4 & & & & & 16 & &  & & & & &\\
 		\hline
-		9 & 23 & $\rightarrow$ & 9 & & & & & & & & & & &\\
+		9 & 1 & & $\rightarrow$ & 1 & & & & & & & & &\\
 		\hline
 	\end{tabular}
 \end{table}
