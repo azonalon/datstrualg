@@ -194,4 +194,49 @@ sich:
     \lstinputlisting{search_sequence.js}
 \end{enumerate} 
 
+\newpage
+
+\subsection*{Aufgabe 3}
+In dieser Aufgabe soll eine Tabelle der Länge 12 erstellt und mittels Hashing
+die Werte eingefügt werden. Dies wird anhand eines Wertes gezeigt, da die 
+anderen Werte äquivalent berechnet werden.
+
+\begin{align*}
+	h(z) &= (2z+5)\\
+	z &= 12\\
+	h(12) &= (2 \cdot 12 + 5)\\
+	h(12) &= 29 
+\end{align*}
+Dies wurde auch mit den anderes Werten gemacht. Diese werden nun in die Tabelle mit mod 11 eingeschrieben.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline\hline
+		\textbf{Eintrag}&\textbf{h(s)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+		\hline
+		12 & 29 & & & & & & & & 12 & & & & &\\
+		\hline
+		44 & 93 & & & & & & 44 & & & & & & &\\
+		\hline
+		13 & 31 & & & & & & & & & 9 & & & &\\
+		\hline
+		88 & 181 & & & & & & $\rightarrow$ & 88 & & & & & &\\
+		\hline
+		23 & 51 & & & & & & & & 23 & & & & &\\
+		\hline
+		94 & 193 & & & & & & & 6 & & & & & &\\
+		\hline
+		11 & 27 & & & & & & $\rightarrow$ & $\rightarrow$ & 11 & & & & &\\
+		\hline
+		39 & 83 & & & & & & $\rightarrow$ & $\rightarrow$ & $\rightarrow$ & 39 & & & &\\
+		\hline
+		20 & 45 & 23 & & & & & & & & & & & &\\
+		\hline
+		16 & 37 & & & & & 16 & &  & & & & & &\\
+		\hline
+		9 & 23 & $\rightarrow$ & 9 & & & & & & & & & & &\\
+		\hline
+	\end{tabular}
+\end{table}
+
 \end{document}
