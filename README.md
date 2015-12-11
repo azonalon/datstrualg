@@ -1,7 +1,7 @@
 ### Aufgaben
- 1. Jens 9.1
+ 1. [Jens](https://github.com/meteo04/datstrualg) 9.1
  2. Eduard 9.2
- 3. Felix 9.3
+ 3. [Felix](https://github.com/qwertzuiop961/datstrualg) 9.3
 
 ### Style Guidelines
  1. Bitte benutzt leerzeichen anstatt tabs. 
