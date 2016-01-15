@@ -25,7 +25,22 @@
 \title{Datenstrukturen und Algorithmen: Haus\"ubung 10}
 \begin{document}
 \maketitle
-
+\subsection*{Aufgabe 1}
+Allgemein gilt für einen B$^{+}$-Baum:\\
+\begin{enumerate}
+\item
+	- Die Wurzel de Baums hat zwischen 1 und 2m Schlüssel
+\item
+	- Alles anderen internen Knoten haben zwischen m und 2m Schlüssel
+\item
+	- Alle Wege von der Wurzel zu einem Blatt haben die gleiche Länge
+\end{enumerate}
+	
+Der erste Baum verstößt gegen den dritten Punkt, da nicht alle Wege von\\
+den einzelnen Blättern zur Wurzel gleich lang sind. Daher ist dies kein Baum
+der Ordnung 2.\\
+Der zweite Baum ist ein B$^{+}$ der Ordnung 2, da er alle oben genannten 
+Bedingungen erfüllt.
 
 \subsection*{Aufgabe 2}
 \begin{figure}[h!]
