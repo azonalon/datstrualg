@@ -5,6 +5,8 @@
 \usepackage{enumerate}
 \usepackage{listings}
 \usepackage{courier}
+\usepackage{graphicx}
+\usepackage{epstopdf}
 \usepackage[margin=1in]{geometry}
 \lstset{
   numbers=left,
@@ -21,8 +23,73 @@
   Jens Duffert, 2843110 \\
   Eduard Sauter, 3053470
 }
-\title{Datenstrukturen und Algorithmen: Haus\"ubung 4}
+\title{Datenstrukturen und Algorithmen: Haus\"ubung 11}
 \begin{document}
 \maketitle
-
+\subsection*{Aufgabe 3}
+  \begin{enumerate}[a)]
+    \item 
+      \begin{align*}
+        \texttt{i=0:} & & \\
+        \texttt{a} & & \\ 
+        \texttt{b} & & \\ 
+        \vdots & & \\ 
+        \texttt{g} & \rightarrow \texttt{graph} & \\ 
+        \vdots & & \\ 
+        \texttt{p} & \rightarrow \texttt{position, partition, pivot, parität}
+          & \rightarrow \texttt{i=1 (p)} \\ 
+        \vdots & & \\ 
+        \texttt{s} & \rightarrow \texttt{stack, speicher, stapelspeicher}
+          & \rightarrow \texttt{i=1 (s)} \\ 
+        \vdots & & \\ 
+        \texttt{z} & & \\ 
+        \texttt{i=1 (p):} & & \\
+        \texttt{a} & \rightarrow \texttt{partition, parität} & \rightarrow
+          \texttt{i=2 (pa)} \\ 
+        \vdots & & \\ 
+        \texttt{i} & \rightarrow \texttt{pivot} & \\ 
+        \vdots & & \\ 
+        \texttt{o} & \rightarrow \texttt{position} & \\ 
+        \vdots & & \\ 
+        \texttt{i=2 (pa):} & & \\
+        \vdots & & \\ 
+        \texttt{r} & \rightarrow \texttt{partition, parität} & \rightarrow
+          \texttt{i=3 (par)} \\ 
+        \vdots & & \\ 
+      \end{align*}
+      \begin{align*}
+        \texttt{i=3 (par):} & & \\
+        \vdots & & \\ 
+        \texttt{i} & \rightarrow \texttt{parität} & \\ 
+        \vdots & & \\ 
+        \texttt{t} & \rightarrow \texttt{partition} & \\ 
+        \vdots & & \\ 
+        \texttt{i=1 (s):} & & \\ 
+        \vdots & & \\ 
+        \texttt{p} & \rightarrow \texttt{speicher} & \\ 
+        \vdots & & \\ 
+        \texttt{t} & \rightarrow \texttt{stack, stapelspeicher} & \rightarrow
+          \texttt{i=2 (st)} \\ 
+        \vdots & & \\ 
+        \texttt{i=2 (st):} & & \\ 
+        \texttt{a} & \rightarrow \texttt{stack, stapelspeicher} & \rightarrow
+          \texttt{i=3 (sta)} \\ 
+        \vdots & & \\ 
+        \texttt{i=3 (sta):} & & \\
+        \vdots & & \\ 
+        \texttt{c} & \rightarrow \texttt{stack} & \\ 
+        \vdots & & \\ 
+        \texttt{p} & \rightarrow \texttt{stapelspeicher} & \\ 
+        \vdots & & \\ 
+      \end{align*}
+      \texttt{Sortierung: graph, parität, partition, pivot, position, speicher,
+        stack, stapelspeicher}
+    \item 
+      Der Algorithmus lässt sich auf Zahlen übertragen, indem man statt der
+      Sortierung \texttt{a,\dots z} die Reihenfolge \texttt{0,\dots 9}
+      verwendet. Allerdings muss man vorher die Zahl mit den meisten Stellen
+      finden und bei kürzeren Zahlen so viele Nullen vorne hinzufügen, dass sie
+      gleich lang sind (sonst wäre z.B. \texttt{9>10} möglich).
+    \item 
+  \end{enumerate}
 \end{document}
