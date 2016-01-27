@@ -1,7 +1,9 @@
 function quicksortInplace(A, s, e) {
-    pivot = partition(A, s, e);
-    quicksortInplace(A, s        , pivot - 1);
-    quicksortInplace(A, pivot + 1, e        );
+    if(s < e){
+        pivot = partition(A, s, e);
+        quicksortInplace(A, s        , pivot - 1);
+        quicksortInplace(A, pivot + 1, e        );
+    }
 }
 
 function partition(A, s, e) {
