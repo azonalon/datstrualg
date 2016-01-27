@@ -28,8 +28,44 @@
 \maketitle
 \subsection*{Aufgabe 2}
 \begin{enumerate}[a)]
-  \item 
-\end{enumerate} <++>
+  \item Implementation von \texttt{partition}
+    \lstinputlisting{quicksort.js}
+  \item
+    \begin{itemize}
+      \item Ja, das ist korrekt. Man kann den Vorgang überschlagen.
+        Für den Worst-Case beschränkt man sich auf den größeren Teil des
+        Arrays beschränken, der nach einer Partitionierung mit
+        1000 zu 1 noch übrig bleibt. Nach $x$ Schritten muss dann
+        %
+        \begin{align*}
+          \left( N \frac{1000}{1001} \right)^x = 1
+        \end{align*}
+        %
+        sein.
+        Also ist dann
+        %
+        \begin{align*}
+          x = \log_{\frac{1000}{1001}} (N) =  k \log_2(N)
+        \end{align*}
+        %
+        Mit einer konstanten $k$. Damit ist dann die Gesamtlaufzeit auch
+        wieder $\mathcal{O}(N \log_2(N))$.
+
+      \item Das ist nicht korrekt. Im schlimmsten fall kann das Array immer
+        noch sortiert sein und zufällig das Element am Ende oder Anfang ausgewählt
+        werden. Auch wenn dies deutlich unwahrscheinlicher ist.
+
+      \item Ja, da Partition für ein Array der Länge $n$ $\mathcal{O}(n)$
+        Zeit benötigt. Ein zusätzlicher Zeitaufwand in $\mathcal{O}(n)$ ändert
+        also an der Laufzeit nichts, da immer noch nur zur Hälfte partitioniert
+        wird durch das Finden eines optimalen Elementes.
+
+      \item Ja, denn man garantiert dann eine Partitionierung in hälften.
+        Da \texttt{median} in $\mathcal{O}(n)$ realisierbar ist, erhält man
+        dann eine Worst-Case Laufzeit von $\mathcal{O}(n \log(N))$.
+
+    \end{itemize}
+\end{enumerate} 
 
 \subsection*{Aufgabe 3}
   \begin{enumerate}[a)]
