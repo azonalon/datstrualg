@@ -132,5 +132,32 @@
       finden und bei kürzeren Zahlen so viele Nullen vorne hinzufügen, dass sie
       gleich lang sind (sonst wäre z.B. \texttt{9>10} möglich).
     \item 
+      Im Average-Case sind die Elemente gleichverteilt, d.h. jeder Bucket ist
+      gleich voll (einige Buckets können maximal ein Element weniger enthalten).
+      Wenn man also $n$ Elemente auf $k$ Buckets verteilt, landen in jedem
+      Bucket $n/k$ Elemente (wenn $n/k$ nicht ganzzahlig ist, wird der Rest
+      verteilt). Wiederholt man den Algorithmus auf den gefüllten Buckets,
+      verringert sich die Anzahl jeweils wieder um den Faktor $1/k$. Wenn man
+      $n$ als Potenz von $k$ schreibt
+      \begin{align*}
+        n = k^x + y, \quad x \in \mathrm{N}, \, y < k^{x + 1} - k^x
+      \end{align*}
+      muss man den Iterationsschritt $x$-mal ausführen um die Liste zu
+      sortieren. In einem Schritt muss man jeweils eine Liste von Buckets
+      erstellen (Komplixität $\mathcal{O}(k)$ z.B. bei einer doppelt verketteten
+      Liste) und den Bucket füllen (pro eingefügtem Element konstanter Aufwand).
+      Die Anzahl an Elementen, die im $i$-ten Schritt in einen Bucket kommen ist
+      $n/k^i$ (für $y = 0$, im Fall $y \neq 0$ kann man die Laufzeit nach oben
+      durch die Laufzeit für $n = k^{x + 1}$ abschätzen). Es ergibt sich also
+      eine Laufzeit $f$ von:
+      \begin{align*}
+        f(n) &= \sum_{i = 1}^x k + \frac{n}{k^i} \\
+        &= x k + n \sum_{i = 1}^x \frac{1}{k^i} \\
+        &\text{Dies ist eine geometrische Reihe.} \\
+        &= x k + n \frac{k^x - 1}{k^x (k - 1)} \\
+        &k^x = n \\
+        &= k \log_k n + \frac{n - 1}{k - 1} \\
+        &\in \mathcal{O}(k + n)
+      \end{align*}
   \end{enumerate}
 \end{document}
